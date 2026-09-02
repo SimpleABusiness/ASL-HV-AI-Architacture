@@ -1,4 +1,4 @@
-name: Deploy static site to Pages
+name: Verify and optionally deploy static site
 
 on:
   push:
@@ -15,15 +15,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify static site
+        run: python3 tests/verify_site.py
+
   deploy:
+    if: github.event_name == 'workflow_dispatch'
+    needs: verify
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify static site
-        run: python3 tests/verify_site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
