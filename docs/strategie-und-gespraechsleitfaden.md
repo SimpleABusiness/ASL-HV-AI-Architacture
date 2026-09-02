@@ -31,6 +31,18 @@ Die ausführliche interne Vorbereitung liegt in Freddys Obsidian unter:
 - keine Altsoftware-Ablösung ohne belastbare Ist-Aufnahme
 - kein Big-Bang-Digitalisierungsprojekt für Papierakten
 
-## Website
+## Kundenpräsentation
 
-`index.html` ist eine visuelle Gesprächsgrundlage mit Ausgangslage, Copilot-Diagnose, Zielbild, Optimierungsideen, Vor-Ort-Agenda, Roadmap und Quellen.
+`index.html` ist eine interaktive Präsentation mit neun Folien:
+
+1. Gesprächseinstieg,
+2. vorhandene Systemlandschaft,
+3. Übergaben und Optimierungspotenzial,
+4. drei sofort testbare Outlook-/Copilot-Routinen,
+5. Copilot-Diagnose,
+6. pragmatisches Zielbild,
+7. mögliche SimpleA-Unterstützung,
+8. gemeinsame Priorisierung,
+9. Quellen und Datenrahmen.
+
+Die Folien lassen sich per Tastatur steuern. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
