@@ -3,225 +3,227 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
-    <title>SimpleA × ASL Hausverwaltung · KI-Arbeitsmodell</title>
-    <meta name="description" content="Gesprächs- und Zielbildentwurf für einen kontrollierten KI-gestützten Arbeitsalltag der ASL Hausverwaltung." />
-    <link rel="icon" href="assets/simplea-logo.png" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content="Interaktive Gesprächspräsentation für den KI-Praxis-Check der ASL Hausverwaltung." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <title>ASL Hausverwaltung · KI-Praxis-Check</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Zum Inhalt springen</a>
-    <header class="nav">
-      <a class="brand" href="#start" aria-label="Zum Start">
+    <a class="skip-link" href="#deck">Zur Präsentation</a>
+
+    <header class="presenter-bar">
+      <a class="brand" href="#folie-1" aria-label="Zur ersten Folie">
         <img src="assets/simplea-logo.png" alt="SimpleA" />
         <span>× ASL Hausverwaltung</span>
       </a>
-      <nav aria-label="Seitennavigation">
-        <a href="#ausgangslage">Ausgangslage</a>
-        <a href="#copilot">Copilot</a>
-        <a href="#zielbild">Zielbild</a>
-        <a href="#ideen">Ideen</a>
-        <a href="#termin">Vor Ort</a>
-        <a href="#roadmap">Roadmap</a>
-      </nav>
-      <a class="nav-cta" href="#entscheidungen">Nächste Entscheidung</a>
-      <div class="progress" aria-hidden="true"><span></span></div>
+      <div class="session-label"><i></i> Gesprächsentwurf · gemeinsam prüfen</div>
+      <button class="outline-toggle" type="button" aria-controls="outline" aria-expanded="false">Übersicht <kbd>O</kbd></button>
     </header>
 
-    <main id="main">
-      <section id="start" class="section hero">
-        <div class="hero-copy">
-          <p class="kicker">SimpleA · Gesprächs- & Zielbildentwurf</p>
-          <h1>Weniger suchen.<br />Weniger doppelt pflegen.<br /><em>Mehr Überblick.</em></h1>
-          <p class="subline">
-            ASL soll nicht noch ein weiteres KI-Tool bekommen. Der erste Schritt ist,
-            Outlook, Microsoft 365 und etg24 so zu nutzen, dass wiederkehrende Arbeit
-            leichter wird – ohne automatische Außenkommunikation und ohne die Kontrolle abzugeben.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#termin">Vor-Ort-Termin vorbereiten</a>
-            <a class="button ghost" href="#zielbild">Zielbild ansehen</a>
+    <main id="deck" class="deck" aria-live="polite">
+      <section class="slide slide-cover active" id="folie-1" data-title="Start" aria-hidden="false" tabindex="-1">
+        <div class="slide-grid cover-grid">
+          <div class="slide-copy">
+            <p class="eyebrow">ASL × SimpleA · gemeinsamer Praxis-Check</p>
+            <h1>Weniger suchen.<br />Mehr <em>erledigen.</em></h1>
+            <p class="lead">Wir schauen gemeinsam auf den heutigen Arbeitsalltag – und finden kleine Verbesserungen, die wirklich entlasten, ohne die Kontrolle abzugeben.</p>
+            <div class="conversation-note"><span>Heute geht es nicht um</span><strong>noch ein weiteres KI-Tool.</strong></div>
           </div>
-          <div class="status-line">
-            <span class="status known">Bekannt</span>
-            <span>Ein-Personen-Verwaltung · Microsoft 365 · Outlook · etg24 · lokale Altsoftware · Papierakten</span>
-          </div>
-        </div>
-        <div class="hero-system" aria-label="Systemlandschaft ASL">
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="system-core"><strong>ASL</strong><span>Mensch entscheidet</span></div>
-          <div class="system-node node-mail"><b>Outlook</b><span>Eingang</span></div>
-          <div class="system-node node-etg"><b>etg24</b><span>Vorgänge</span></div>
-          <div class="system-node node-local"><b>Altsoftware</b><span>Fachdaten</span></div>
-          <div class="system-node node-paper"><b>Papier</b><span>Archiv</span></div>
-        </div>
-      </section>
-
-      <section id="ausgangslage" class="section soft-section">
-        <div class="section-head">
-          <p class="kicker">Ausgangslage</p>
-          <h2>Vier Arbeitswelten. Eine Person hält sie zusammen.</h2>
-          <p>Die folgenden Punkte sind Gesprächshypothesen, keine fertige Diagnose. Im Termin prüfen wir, wo tatsächlich Zeit verloren geht.</p>
-        </div>
-        <div class="landscape-grid">
-          <article>
-            <span class="card-no">01</span><h3>Outlook & Microsoft 365</h3>
-            <p>Vermutlich täglicher Eingangskanal für Eigentümer, Mieter, Dienstleister, Termine und Anhänge.</p>
-            <b>Zu prüfen</b><p>Postfachtyp, Outlook-Version, Lizenz, Ordner/Regeln, Kalender, OneDrive/SharePoint.</p>
-          </article>
-          <article>
-            <span class="card-no">02</span><h3>etg24</h3>
-            <p>Kann Kommunikation, Vorgänge, Aufgaben, Termine und Dokumente zentralisieren – der tatsächlich gebuchte Tarif und heutige Nutzungsgrad sind offen.</p>
-            <b>Zu prüfen</b><p>Welche Eingänge landen bereits als Vorgang? Was bleibt parallel in Outlook oder Papier?</p>
-          </article>
-          <article>
-            <span class="card-no">03</span><h3>Lokale Fachsoftware</h3>
-            <p>Ältere Programme können weiterhin führend für Stammdaten, Buchhaltung oder Abrechnung sein.</p>
-            <b>Zu prüfen</b><p>Produkt, Version, Exportmöglichkeiten, Backups, Schnittstellen und unverzichtbare Funktionen.</p>
-          </article>
-          <article>
-            <span class="card-no">04</span><h3>Physische Leitzordner</h3>
-            <p>Papier ist möglicherweise Archiv, Arbeitskopie und Sicherheitsgefühl zugleich.</p>
-            <b>Zu prüfen</b><p>Was muss im Original bleiben? Was wird häufig gesucht? Was existiert bereits digital doppelt?</p>
-          </article>
-        </div>
-        <aside class="principle-callout"><span>Leitprinzip</span><strong>Kein Big Bang. Erst sichtbar machen, dann vereinfachen, danach gezielt automatisieren.</strong></aside>
-      </section>
-
-      <section id="copilot" class="section dark-section">
-        <div class="section-head">
-          <p class="kicker">Copilot in Outlook</p>
-          <h2>Schlechte Ergebnisse sind oft ein Setup-Problem – nicht nur ein Prompt-Problem.</h2>
-          <p>Im Gespräch trennen wir Produkt, Lizenz, Technik, Datenkontext und Arbeitsweise. Erst danach lässt sich beurteilen, ob Copilot falsch eingerichtet, falsch erwartet oder schlicht das falsche Werkzeug ist.</p>
-        </div>
-        <div class="diagnostic-flow" aria-label="Copilot Diagnosefolge">
-          <article><span>1</span><h3>Identität</h3><p>Ist in Outlook wirklich das geschäftliche Microsoft-Entra-Konto aktiv?</p></article>
-          <article><span>2</span><h3>Lizenz</h3><p>Copilot Chat oder kostenpflichtiges Microsoft-Copilot-Add-on? Die Fähigkeiten unterscheiden sich.</p></article>
-          <article><span>3</span><h3>Mailbox</h3><p>Primäres Exchange-Online-Postfach prüfen; Archiv-, Gruppen-, freigegebene und delegierte Postfächer können je nach Funktion eingeschränkt sein.</p></article>
-          <article><span>4</span><h3>Client</h3><p>Outlook-Version, Updatekanal, HTML-Verfassen, Connected Experiences sowie signierte, verschlüsselte oder geschützte Testmails prüfen.</p></article>
-          <article><span>5</span><h3>Kontext</h3><p>Copilot kennt keine Papierakte und keine lokale Fachsoftware, solange Inhalte nicht passend verfügbar sind.</p></article>
-          <article><span>6</span><h3>Auftrag</h3><p>Ziel, Empfänger, Fakten, Ton, Grenzen und gewünschtes Format explizit vorgeben.</p></article>
-        </div>
-        <div class="outlook-wins">
-          <div class="win-copy">
-            <p class="kicker">Sofort testbar</p>
-            <h3>Vier kleine Outlook-Routinen</h3>
-            <p>Wir testen mit anonymisierten oder freigegebenen Beispielen. Keine echten Bankdaten, Ausweisdaten oder sensiblen Eigentümerinformationen in ungeprüfte Konten kopieren.</p>
-          </div>
-          <div class="win-list">
-            <article><b>Thread zusammenfassen</b><p>Entscheidungen, offene Fragen, Fristen und nächste Schritte mit Bezug auf die Originalmails.</p></article>
-            <article><b>Antwort entwerfen</b><p>Kurzer sachlicher Entwurf aus dem vorhandenen Thread – anschließend fachlich prüfen und selbst senden.</p></article>
-            <article><b>Ton prüfen</b><p>Coaching für Klarheit, Ton und Leserwirkung bei schwieriger Kommunikation.</p></article>
-            <article><b>Tagesradar</b><p>Wichtige ungelesene Mails und Termine priorisieren; Fristen immer am Original verifizieren.</p></article>
+          <div class="cover-map" aria-label="Die heutige Systemlandschaft">
+            <div class="map-orbit orbit-a"></div><div class="map-orbit orbit-b"></div>
+            <div class="map-core"><strong>ASL</strong><small>entscheidet</small></div>
+            <div class="map-node node-mail"><strong>Outlook</strong><small>Eingang</small></div>
+            <div class="map-node node-portal"><strong>etg24</strong><small>Vorgänge</small></div>
+            <div class="map-node node-local"><strong>Altsoftware</strong><small>Fachdaten</small></div>
+            <div class="map-node node-paper"><strong>Papier</strong><small>Archiv</small></div>
           </div>
         </div>
+        <footer class="slide-footer"><span>SimpleA · KI-Praxis-Check</span><span>01</span></footer>
       </section>
 
-      <section id="zielbild" class="section architecture-section">
-        <div class="section-head">
-          <p class="kicker">Pragmatisches Zielbild</p>
-          <h2>Jedes System bekommt eine klare Rolle.</h2>
-          <p>Das Ziel ist nicht, alles nach Microsoft zu verschieben. Entscheidend ist, dass für jede Information ein führender Ort und eine eindeutige nächste Aktion existiert.</p>
+      <section class="slide slide-light" id="folie-2" data-title="Was heute da ist" aria-hidden="true" tabindex="-1">
+        <div class="slide-head">
+          <p class="eyebrow">01 · Ausgangslage</p>
+          <h2>Es ist schon viel da.<br /><em>Nur noch nicht aus einem Guss.</em></h2>
+          <p>Die vorhandenen Werkzeuge sind kein Fehlstart. Entscheidend ist, welche Rolle jedes davon im Alltag übernehmen soll.</p>
         </div>
-        <div class="architecture">
-          <div class="lane input"><span>Eingang</span><strong>Outlook · Telefon · Portal · Papier</strong><small>Alles beginnt sichtbar, noch nichts wird automatisch versendet.</small></div>
-          <div class="connector" aria-hidden="true">↓</div>
-          <div class="lane triage"><span>Verstehen</span><strong>Copilot als Lese-, Struktur- und Entwurfshilfe</strong><small>Zusammenfassen, kategorisieren, fehlende Angaben markieren, Entwurf vorbereiten.</small></div>
-          <div class="connector" aria-hidden="true">↓</div>
-          <div class="lane work"><span>Bearbeiten</span><strong>etg24 für Vorgänge · Fachsoftware für Fachdaten</strong><small>Keine doppelte Wahrheit: Prozessstatus und kaufmännische Daten bleiben dort, wo sie fachlich hingehören.</small></div>
-          <div class="connector" aria-hidden="true">↓</div>
-          <div class="lane knowledge"><span>Wissen</span><strong>Microsoft 365 / etg24 – erst nach Ablagekonzept</strong><small>Häufig benötigte Dokumente strukturiert digital; Originale und gesetzliche Aufbewahrung separat klären.</small></div>
-          <div class="connector" aria-hidden="true">↓</div>
-          <div class="lane approval"><span>Kontrolle</span><strong>ASL prüft, entscheidet und sendet</strong><small>Keine Rechts-, Zahlungs- oder Vertragsentscheidung durch KI.</small></div>
+        <div class="landscape-board">
+          <article class="landscape-item primary"><span>Vorab genannter Startpunkt</span><h3>Outlook & Microsoft 365</h3><p>E-Mails, Termine, Dokumente und Kommunikation.</p><b>Hebel: Copilot richtig einrichten und konkrete Routinen nutzen.</b></article>
+          <article class="landscape-item"><span>Bereits vorhanden</span><h3>etg24</h3><p>Portal, Vorgänge und digitale Kommunikation.</p><b>Hebel: prüfen, welche vorhandenen Funktionen heute ungenutzt bleiben.</b></article>
+          <article class="landscape-item"><span>Fachlich wichtig</span><h3>Lokale Altsoftware</h3><p>Spezialisierte Funktionen und bestehende Daten.</p><b>Hebel: führende Daten klären, statt vorschnell zu ersetzen.</b></article>
+          <article class="landscape-item"><span>Gewachsen</span><h3>Physische Leitzordner</h3><p>Originale, Archiv und tägliche Arbeitsunterlagen.</p><b>Hebel: häufig Gesuchtes priorisiert auffindbar machen.</b></article>
         </div>
-        <div class="ownership-grid">
-          <article><h3>Outlook</h3><p>Persönlicher Eingang, Kalender, Entwürfe und kurzfristige Kommunikation.</p></article>
-          <article><h3>etg24</h3><p>Vorgang, Aufgabenstatus, Portal-Kommunikation und freigegebene Objektdokumente – soweit Tarif und Konfiguration passen.</p></article>
-          <article><h3>Altsoftware</h3><p>Bleibt führend für spezialisierte Funktionen, bis ein belastbarer Migrations- oder Integrationsnutzen bewiesen ist.</p></article>
-          <article><h3>Papier</h3><p>Original-/Ausnahmebestand. Häufig genutzte Arbeitsinformationen werden nach Priorität auffindbar digitalisiert.</p></article>
-        </div>
+        <aside class="question-strip"><span>Frage an ASL</span><strong>Wo beginnt ein typischer Vorgang – und wo muss dieselbe Information erneut eingegeben werden?</strong></aside>
+        <footer class="slide-footer"><span>Vorab bekannt · Details im Termin bestätigen</span><span>02</span></footer>
       </section>
 
-      <section id="ideen" class="section soft-section">
-        <div class="section-head">
-          <p class="kicker">Kandidaten für ASL</p>
-          <h2>Erst kleine, häufige Fälle. Dann Verbindungen.</h2>
-          <p>Die Reihenfolge ist eine Empfehlung für das Gespräch. Aufwand und Nutzen werden anhand echter Mengen und Beispiele validiert.</p>
+      <section class="slide slide-dark" id="folie-3" data-title="Optimierungspotenzial" aria-hidden="true" tabindex="-1">
+        <div class="slide-head compact">
+          <p class="eyebrow">02 · Optimierungspotenzial</p>
+          <h2>Nicht zu wenig Tools.<br /><em>Zu viele Übergaben.</em></h2>
         </div>
-        <div class="idea-grid">
-          <article class="featured"><div class="idea-meta"><span>Start</span><em>niedriges Risiko</em></div><h3>Outlook-Praxis-Setup</h3><p>Lizenz und Client prüfen, drei reale Mailtypen strukturieren, Promptkarten und feste Prüfschritte entwickeln.</p><ul><li>sofort erlebbarer Nutzen</li><li>keine Integration nötig</li><li>Ausgangsbasis für alle weiteren Schritte</li></ul></article>
-          <article><div class="idea-meta"><span>2</span><em>Prozessklarheit</em></div><h3>E-Mail → etg24-Vorgang</h3><p>Festlegen, welche Anfragen als Vorgang gehören und welche in Outlook bleiben. Übergabe zunächst manuell, später nur bei sauberem Pfad automatisieren.</p></article>
-          <article><div class="idea-meta"><span>3</span><em>Wissen</em></div><h3>Digitale Objektakte light</h3><p>Ein Objekt als Pilot: häufig gesuchte Unterlagen inventarisieren, benennen, scannen und mit eindeutigen Ablageregeln versehen.</p></article>
-          <article><div class="idea-meta"><span>4</span><em>Fokus</em></div><h3>Tages- & Wochenradar</h3><p>Offene Mails, Termine, etg24-Vorgänge und Papier-Wiedervorlagen in einer kurzen persönlichen Steuerungsroutine zusammenführen.</p></article>
-          <article><div class="idea-meta"><span>5</span><em>Qualität</em></div><h3>Antwortbausteine mit Kontrolle</h3><p>Wiederkehrende Kategorien wie Unterlagenanfrage, Schadensaufnahme oder Terminabstimmung mit Pflichtangaben und Tonalität vorbereiten.</p></article>
-          <article><div class="idea-meta"><span>später</span><em>nach Prüfung</em></div><h3>Gezielte Automatisierung</h3><p>Power Automate, etg24-Funktionen oder Schnittstellen erst einsetzen, wenn Quelle, Ziel, Berechtigung, Fehlerfall und menschliche Freigabe definiert sind.</p></article>
+        <div class="journey" aria-label="Typischer Vorgang mit möglichen Reibungsverlusten">
+          <article><span>01</span><strong>Eingang</strong><small>Mail · Telefon · Portal</small></article><i></i>
+          <article class="hot"><span>02</span><strong>Verstehen</strong><small>Was ist passiert?</small><b>Lesen</b></article><i></i>
+          <article class="hot"><span>03</span><strong>Suchen</strong><small>Objekt · Historie · Dokument</small><b>Suchen</b></article><i></i>
+          <article><span>04</span><strong>Entscheiden</strong><small>Was ist zu tun?</small></article><i></i>
+          <article class="hot"><span>05</span><strong>Übertragen</strong><small>etg24 · Liste · Papier</small><b>Doppelt</b></article><i></i>
+          <article><span>06</span><strong>Antworten</strong><small>Entwurf · Prüfung · Versand</small></article>
         </div>
+        <div class="potential-layout">
+          <div class="big-statement"><span>Die größte Chance</span><strong>Information einmal verstehen – danach gezielt weiterverwenden.</strong></div>
+          <div class="friction-list">
+            <p><b>Suchzeit:</b> Informationen liegen an mehreren Orten.</p>
+            <p><b>Medienbruch:</b> Mail, Portal, Fachsoftware und Papier sind nicht verbunden.</p>
+            <p><b>Wiedervorlage:</b> Offene Punkte bleiben im Kopf oder Postfach.</p>
+            <p><b>KI-Frust:</b> Copilot bekommt nicht den erwarteten Kontext oder Auftrag.</p>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>Hypothesen – im Gespräch an einem echten Vorgang prüfen</span><span>03</span></footer>
       </section>
 
-      <section id="termin" class="section visit-section">
-        <div class="section-head">
-          <p class="kicker">Vor-Ort-Termin · 90 Minuten</p>
-          <h2>Nicht präsentieren. Gemeinsam am echten Alltag entlanggehen.</h2>
+      <section class="slide slide-blue" id="folie-4" data-title="Sofortmaßnahmen" aria-hidden="true" tabindex="-1">
+        <div class="slide-head compact">
+          <p class="eyebrow">03 · Sofort im Alltag</p>
+          <h2>Drei Routinen.<br /><em>Schon morgen testbar.</em></h2>
+          <p>Ohne Integration, ohne neues Großprojekt und zunächst nur mit anonymisierten oder ausdrücklich freigegebenen Inhalten.</p>
         </div>
-        <ol class="agenda">
-          <li><span>00–10</span><div><h3>Ziel & Schmerzbild</h3><p>Was soll nach dem Termin leichter sein? Wo stört Copilot konkret? Welcher Moment kostet täglich Nerven?</p></div></li>
-          <li><span>10–25</span><div><h3>Copilot live diagnostizieren</h3><p>Konten, Lizenzname, Outlook-Version, Postfach, sichtbare Copilot-Funktionen und ein konkretes Fehlbeispiel prüfen.</p></div></li>
-          <li><span>25–45</span><div><h3>Einen Vorgang begleiten</h3><p>Eine typische Mail vom Eingang über Rückfragen, Dokumentensuche und etg24 bis zur Ablage verfolgen. Zeiten und Medienwechsel notieren.</p></div></li>
-          <li><span>45–60</span><div><h3>System- und Papierlandkarte</h3><p>Altprogramme, Daten, Exporte, Backups und wichtige Leitzordner aufnehmen. Keine Software vorschnell ersetzen.</p></div></li>
-          <li><span>60–75</span><div><h3>Drei sichere Demos</h3><p>Thread-Zusammenfassung, Antwortentwurf und Coaching mit freigegebenem oder synthetischem Material testen.</p></div></li>
-          <li><span>75–90</span><div><h3>Pilot entscheiden</h3><p>Einen Prozess, Erfolgskriterium, Datenrahmen, Aufwand und nächsten Termin festlegen.</p></div></li>
-        </ol>
-        <div class="bring-card"><h3>Zum Termin bereithalten</h3><div><span>Microsoft-365-Rechnung oder Admin-Zugang</span><span>genaue Outlook-Version</span><span>2–3 anonymisierbare Beispielmails</span><span>Liste der lokalen Programme</span><span>ein typischer Leitzordner</span><span>etg24-Tarif / Funktionsübersicht</span><span>ungefähre Fallmengen pro Woche</span><span>bekannte Backup-Lösung</span></div></div>
+        <div class="quickwins">
+          <article>
+            <span class="quick-no">01</span>
+            <div><h3>Thread aufräumen</h3><p>Copilot fasst Anliegen, bestätigte Fakten, offene Fragen, Fristen und nächste Schritte zusammen.</p></div>
+            <blockquote>„Nutze nur den Inhalt dieses Threads. Markiere Unsicherheiten mit ‚zu prüfen‘.“</blockquote>
+            <b>Effekt: schneller orientieren</b>
+          </article>
+          <article>
+            <span class="quick-no">02</span>
+            <div><h3>Antwort vorbereiten</h3><p>Ein sachlicher Entwurf aus bestätigten Fakten – ohne erfundene Zusage und immer vor Versand geprüft.</p></div>
+            <blockquote>„Ergänze nichts. Frage nach fehlenden Angaben und nenne den klaren nächsten Schritt.“</blockquote>
+            <b>Effekt: weniger Schreibarbeit</b>
+          </article>
+          <article>
+            <span class="quick-no">03</span>
+            <div><h3>Tagesradar bauen</h3><p>Wichtige Rückmeldungen, Termine und zugesagte Aufgaben priorisieren; jede Frist am Original verifizieren.</p></div>
+            <blockquote>„Begründe jede Priorität und verweise auf die jeweilige Quelle.“</blockquote>
+            <b>Effekt: weniger im Kopf behalten</b>
+          </article>
+        </div>
+        <footer class="slide-footer"><span>KI unterstützt · ASL prüft und entscheidet</span><span>04</span></footer>
       </section>
 
-      <section id="roadmap" class="section roadmap-section">
-        <div class="section-head">
-          <p class="kicker">Vorschlag nach dem Erstgespräch</p>
-          <h2>Von „Copilot nervt“ zu einer kontrollierten Arbeitsroutine.</h2>
+      <section class="slide slide-light" id="folie-5" data-title="Copilot richtig nutzen" aria-hidden="true" tabindex="-1">
+        <div class="slide-grid diagnostic-layout">
+          <div class="slide-copy">
+            <p class="eyebrow">04 · Copilot in Outlook</p>
+            <h2>Erst richten.<br />Dann <em>prompten.</em></h2>
+            <p class="lead small">Schlechte Ergebnisse sind häufig ein Zusammenspiel aus Produkt, Lizenz, Postfach, Client und fehlendem Kontext – nicht einfach nur ein schlechter Prompt.</p>
+            <aside class="question-card"><span>Live im Termin</span><strong>Ein konkretes Beispiel zeigen lassen, bei dem Copilot aktuell scheitert.</strong></aside>
+          </div>
+          <ol class="diagnostic-list">
+            <li><span>1</span><div><b>Identität</b><small>Geschäftliches Microsoft-Entra-Konto aktiv?</small></div></li>
+            <li><span>2</span><div><b>Lizenz</b><small>Copilot Chat oder vollständiges Add-on?</small></div></li>
+            <li><span>3</span><div><b>Postfach</b><small>Primäres Exchange-Online-Postfach oder eingeschränkter Postfachtyp?</small></div></li>
+            <li><span>4</span><div><b>Outlook</b><small>Client, Version, Updatekanal und Connected Experiences?</small></div></li>
+            <li><span>5</span><div><b>Nachricht</b><small>Signiert, verschlüsselt oder besonders geschützt?</small></div></li>
+            <li><span>6</span><div><b>Auftrag</b><small>Ziel, Fakten, Ton, Grenzen und Format klar?</small></div></li>
+          </ol>
         </div>
-        <div class="roadmap">
-          <article><span>Woche 0</span><h3>Praxis-Check</h3><p>Lizenz, Client, Mailbox, Datenschutzrahmen und zwei Kernprozesse dokumentieren.</p><b>Ergebnis</b><p>Diagnose + priorisierte Maßnahmenliste.</p></article>
-          <article><span>Woche 1</span><h3>Quick Wins</h3><p>Outlook-Routinen, Promptkarten, Ordner/Regeln und Prüfliste gemeinsam einrichten.</p><b>Ergebnis</b><p>Nutzbarer persönlicher Arbeitsstandard.</p></article>
-          <article><span>Woche 2–4</span><h3>Mini-Pilot</h3><p>Einen häufigen Eingangskanal oder Dokumentprozess im Schattenmodus erproben.</p><b>Ergebnis</b><p>Messung statt Bauchgefühl.</p></article>
-          <article><span>ab Woche 5</span><h3>Entscheidung</h3><p>etg24 besser nutzen, Ablage digitalisieren, Integration bauen – oder bewusst nichts automatisieren.</p><b>Ergebnis</b><p>Investition nur bei belegtem Nutzen.</p></article>
-        </div>
-        <div class="metrics"><span>Zeit bis zum brauchbaren Entwurf</span><span>Suchzeit pro Vorgang</span><span>fehlende Pflichtangaben</span><span>doppelte Ablagen</span><span>Nacharbeit</span><span>ungeprüfte externe Sends: 0</span></div>
+        <footer class="slide-footer"><span>Diagnose vor Schulung oder Automatisierung</span><span>05</span></footer>
       </section>
 
-      <section id="entscheidungen" class="section decision-section">
-        <div class="decision-copy">
-          <p class="kicker">Was im Erstgespräch entschieden werden soll</p>
-          <h2>Ein klarer nächster Schritt – nicht zwanzig lose Ideen.</h2>
-          <ul>
-            <li>Welche Copilot-Variante und Lizenz ist tatsächlich aktiv?</li>
-            <li>Welcher konkrete Vorgang eignet sich als erster Pilot?</li>
-            <li>Welche Daten dürfen in welchem Werkzeug verarbeitet werden?</li>
-            <li>Wo bleibt ASL zwingend im Freigabepunkt?</li>
-            <li>Welche Messgröße zeigt nach zwei bis vier Wochen echten Nutzen?</li>
-          </ul>
+      <section class="slide slide-black" id="folie-6" data-title="Zielbild" aria-hidden="true" tabindex="-1">
+        <div class="slide-head compact">
+          <p class="eyebrow">05 · Pragmatisches Zielbild</p>
+          <h2>Jedes System bekommt<br /><em>eine klare Rolle.</em></h2>
         </div>
-        <aside class="guardrail-card">
-          <span>Unverhandelbare Leitplanken</span>
-          <h3>KI bereitet vor. ASL entscheidet.</h3>
-          <p>Keine automatische Außenkommunikation, keine Zahlungsauslösung, keine Rechts- oder Vertragsentscheidung, keine ungeprüfte Übernahme von Fristen, Beträgen oder personenbezogenen Daten.</p>
-        </aside>
+        <div class="operating-model">
+          <div class="model-step input"><span>Eingang</span><strong>Outlook · Telefon · etg24 · Papier</strong><small>Ein Vorgang wird sichtbar.</small></div>
+          <div class="model-arrow">→</div>
+          <div class="model-step ai"><span>Verstehen</span><strong>Copilot strukturiert und entwirft</strong><small>Keine Entscheidung, kein Versand.</small></div>
+          <div class="model-arrow">→</div>
+          <div class="model-step work"><span>Bearbeiten</span><strong>etg24 + Fachsoftware</strong><small>Status und Fachdaten bleiben führend.</small></div>
+          <div class="model-arrow">→</div>
+          <div class="model-step human"><span>Kontrolle</span><strong>ASL prüft, entscheidet, sendet</strong><small>Menschlicher Freigabepunkt.</small></div>
+        </div>
+        <div class="role-rules">
+          <article><span>Outlook</span><strong>persönlicher Eingang, Kalender und Entwürfe</strong></article>
+          <article><span>etg24</span><strong>Vorgänge, Aufgaben und Portalkommunikation</strong></article>
+          <article><span>Altsoftware</span><strong>Fachdaten, bis ein besserer Weg bewiesen ist</strong></article>
+          <article><span>Papier</span><strong>Originale und begründete Ausnahmen</strong></article>
+        </div>
+        <div class="guardrail">Keine autonome Außenkommunikation · keine Rechts-, Zahlungs- oder Vertragsentscheidung durch KI</div>
+        <footer class="slide-footer"><span>Zielbild als Gesprächsentwurf</span><span>06</span></footer>
       </section>
 
-      <section id="quellen" class="sources-section">
-        <div><p class="kicker">Quellen & Stand</p><h2>Diskussionsgrundlage · 2. September 2026</h2><p>ASL-spezifische Aussagen beruhen ausschließlich auf den von Freddy bereitgestellten Angaben und müssen im Termin bestätigt werden. Produktfunktionen können sich ändern.</p></div>
-        <ul>
-          <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements" target="_blank" rel="noopener">Microsoft: Mindestanforderungen für Copilot</a></li>
-          <li><a href="https://support.microsoft.com/en-us/Microsoft-365-Copilot/how-copilot-chat-works-in-microsoft-365-apps" target="_blank" rel="noopener">Microsoft: Copilot Chat in Microsoft-365-Apps</a></li>
-          <li><a href="https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook" target="_blank" rel="noopener">Microsoft: Copilot in Outlook – FAQ und Grenzen</a></li>
-          <li><a href="https://support.microsoft.com/en-us/outlook/copilot-pages/draft-an-email-message-with-copilot-in-outlook" target="_blank" rel="noopener">Microsoft: E-Mail mit Copilot entwerfen</a></li>
-          <li><a href="https://support.microsoft.com/en-us/outlook/copilot-pages/summarize-an-email-thread-with-copilot-in-outlook" target="_blank" rel="noopener">Microsoft: E-Mail-Thread zusammenfassen</a></li>
-          <li><a href="https://etg24.de/fuer-verwaltungen" target="_blank" rel="noopener">etg24: Funktionen für Verwaltungen</a></li>
-          <li><a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener">OpenAI: Datenschutz für Business-Produkte</a></li>
-        </ul>
+      <section class="slide slide-light" id="folie-7" data-title="SimpleA Unterstützung" aria-hidden="true" tabindex="-1">
+        <div class="slide-head compact">
+          <p class="eyebrow">06 · Wo SimpleA unterstützt</p>
+          <h2>Klein anfangen.<br /><em>Nur weitergehen, wenn es hilft.</em></h2>
+        </div>
+        <div class="support-path">
+          <article class="support-step recommended"><span>Start</span><h3>Praxis-Check</h3><p>Copilot und Outlook prüfen, echte Beispiele testen, persönliche Prompt- und Arbeitsroutinen einrichten.</p><ul><li>Lizenz- und Setup-Check</li><li>2–3 Alltagsszenarien</li><li>konkrete Leitplanken</li></ul><b>Direkte Alltagshilfe</b></article>
+          <div class="path-arrow">wenn sinnvoll →</div>
+          <article class="support-step"><span>Nächster Schritt</span><h3>Workflow-Sprint</h3><p>Einen wiederkehrenden Vorgang vollständig verstehen und Medienbrüche reduzieren.</p><ul><li>Ist-Prozess vor Ort</li><li>etg24-/Ablage-Check</li><li>kleines Zielbild</li></ul><b>Belastbarer Pilotplan</b></article>
+          <div class="path-arrow">wenn bewiesen →</div>
+          <article class="support-step"><span>Optional</span><h3>Kontrollierter Pilot</h3><p>Einen klar begrenzten Prozess verbinden oder automatisieren – mit menschlicher Freigabe.</p><ul><li>ein Eingangskanal</li><li>messbare Testfälle</li><li>Rollback und Kontrolle</li></ul><b>Messbarer Praxistest</b></article>
+        </div>
+        <aside class="plain-promise"><span>SimpleA-Versprechen</span><strong>Kein Toolverkauf um jeden Preis. Erst wenn der Nutzen im Alltag sichtbar ist, wird technisch ausgebaut.</strong></aside>
+        <footer class="slide-footer"><span>Umfang und Angebot erst nach der Ist-Aufnahme</span><span>07</span></footer>
+      </section>
+
+      <section class="slide slide-decision" id="folie-8" data-title="Gemeinsame Entscheidung" aria-hidden="true" tabindex="-1">
+        <div class="slide-grid decision-grid">
+          <div class="slide-copy">
+            <p class="eyebrow">07 · Gemeinsame Auswahl</p>
+            <h2>Was würde heute<br /><em>am meisten entlasten?</em></h2>
+            <p class="lead small">Die Auswahl bleibt nur in diesem Browser gespeichert und hilft uns, den nächsten Schritt im Gespräch festzuhalten.</p>
+          </div>
+          <div class="decision-panel">
+            <button type="button" data-decision="Outlook & Copilot zuverlässiger nutzen" aria-pressed="false"><span>A</span><strong>Outlook & Copilot zuverlässiger nutzen</strong><small>Setup, Beispiele und Routinen</small></button>
+            <button type="button" data-decision="Informationen schneller finden" aria-pressed="false"><span>B</span><strong>Informationen schneller finden</strong><small>Ablage und führende Quellen</small></button>
+            <button type="button" data-decision="etg24 besser ausschöpfen" aria-pressed="false"><span>C</span><strong>etg24 besser ausschöpfen</strong><small>Vorgänge, Aufgaben und Portal</small></button>
+            <button type="button" data-decision="Einen Prozess als Pilot verbessern" aria-pressed="false"><span>D</span><strong>Einen Prozess als Pilot verbessern</strong><small>klein, kontrolliert und messbar</small></button>
+            <div class="selection-result" aria-live="polite"><span>Auswahl</span><strong id="selectionText">Noch offen – gemeinsam besprechen</strong></div>
+          </div>
+        </div>
+        <div class="next-step"><span>Nächster Schritt</span><strong>Einen typischen Vorgang am echten Arbeitsplatz gemeinsam durchgehen.</strong></div>
+        <footer class="slide-footer"><span>ASL × SimpleA</span><span>08</span></footer>
+      </section>
+
+      <section class="slide slide-sources" id="folie-9" data-title="Quellen & Rahmen" aria-hidden="true" tabindex="-1">
+        <div class="slide-head compact">
+          <p class="eyebrow">Anhang</p>
+          <h2>Quellen und <em>Rahmen.</em></h2>
+          <p>ASL-spezifische Aussagen beruhen auf den vorab mitgeteilten Angaben und werden im Gespräch bestätigt. Produktfunktionen können sich ändern.</p>
+        </div>
+        <div class="sources-grid">
+          <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Copilot-Lizenzierung</strong></a>
+          <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Mindestanforderungen</strong></a>
+          <a href="https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Copilot in Outlook – FAQ</strong></a>
+          <a href="https://support.microsoft.com/en-us/Microsoft-365-Copilot/how-copilot-chat-works-in-microsoft-365-apps" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Copilot Chat in M365-Apps</strong></a>
+          <a href="https://etg24.de/fuer-verwaltungen" target="_blank" rel="noreferrer"><span>etg24</span><strong>Funktionen für Verwaltungen</strong></a>
+          <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noreferrer"><span>OpenAI</span><strong>Enterprise Privacy</strong></a>
+        </div>
+        <div class="source-rule"><strong>Arbeitsregel:</strong> Keine echten Bankdaten, Ausweisdaten oder sensiblen Eigentümerinformationen in ungeprüfte KI-Konten übertragen.</div>
+        <footer class="slide-footer"><span>Stand · 2. September 2026</span><span>09</span></footer>
       </section>
     </main>
-    <footer><span>SimpleA × ASL Hausverwaltung</span><span>Arbeitsentwurf · keine Rechts- oder Datenschutzberatung</span></footer>
+
+    <aside id="outline" class="outline" role="dialog" aria-modal="true" aria-labelledby="outline-title" aria-hidden="true">
+      <div class="outline-head"><div><span>ASL × SimpleA</span><strong id="outline-title">Präsentationsübersicht</strong></div><button type="button" class="outline-close" aria-label="Übersicht schließen">×</button></div>
+      <nav aria-label="Folienübersicht"></nav>
+      <p class="keyboard-help"><kbd>←</kbd><kbd>→</kbd> navigieren · <kbd>O</kbd> Übersicht · <kbd>Home</kbd><kbd>End</kbd></p>
+    </aside>
+    <div class="outline-backdrop"></div>
+
+    <nav class="deck-controls" aria-label="Präsentationssteuerung">
+      <button type="button" class="control prev" aria-label="Vorherige Folie">←</button>
+      <div class="slide-status"><span id="currentSlide">01</span><i></i><span id="totalSlides">09</span></div>
+      <button type="button" class="control next" aria-label="Nächste Folie">→</button>
+    </nav>
+    <div class="deck-progress" aria-hidden="true"><span></span></div>
+
     <script src="script.js"></script>
   </body>
 </html>
