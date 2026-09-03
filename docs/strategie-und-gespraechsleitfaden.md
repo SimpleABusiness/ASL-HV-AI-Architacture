@@ -33,7 +33,7 @@ Die ausführliche interne Vorbereitung liegt in Freddys Obsidian unter:
 
 ## Kundenpräsentation
 
-`index.html` ist eine interaktive Präsentation mit neun Folien:
+`index.html` ist eine interaktive Präsentation mit zehn Folien:
 
 1. Gesprächseinstieg,
 2. vorhandene Systemlandschaft,
@@ -41,8 +41,15 @@ Die ausführliche interne Vorbereitung liegt in Freddys Obsidian unter:
 4. drei sofort testbare Outlook-/Copilot-Routinen,
 5. Copilot-Diagnose,
 6. pragmatisches Zielbild,
-7. mögliche SimpleA-Unterstützung,
-8. gemeinsame Priorisierung,
-9. Quellen und Datenrahmen.
+7. konkreter Pilotfall „Schadensmeldung per E-Mail“ inklusive Prompt, Systemübergaben und Zeitmessung,
+8. mögliche SimpleA-Unterstützung,
+9. gemeinsame Priorisierung,
+10. Quellen und Datenrahmen.
 
 Die Folien lassen sich per Tastatur steuern. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
+
+### Pilotfall und Zeitmessung
+
+Die neue Prozessfolie verwendet bewusst die vorhandenen Werkzeuge: Outlook als Eingang und Entwurfsort, Copilot für belegte Extraktion und Formulierung, ASL als fachlichen Kontrollpunkt sowie etg24 für den Vorgang. In Stufe 1 erfolgen die Übergaben geprüft über die vorhandenen Oberflächen. Eine etg24-REST-API oder Microsoft Graph/Power Automate ist nur eine spätere Option nach Lizenz-, Feld-, Berechtigungs- und Datenschutzprüfung – kein bereits zugesagter Bestandteil.
+
+Die Zeitwerte `12–15 Minuten heute` und `6–8 Minuten Ziel` sind Messhypothesen. Im Gespräch zuerst drei bis fünf reale, anonymisierte Fälle stoppen. Die Modellrechnung nutzt konservativ sechs Minuten Ersparnis: `6 Minuten × 10 Fälle/Woche × 46 Wochen ÷ 60 = 46 Stunden/Jahr`. Erst nach der Baseline darf daraus ein belastbarer Nutzen abgeleitet werden.

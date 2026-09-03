@@ -9,9 +9,10 @@ Interaktive, kundentaugliche Gesprächspräsentation für einen gemeinsamen Vor-
 3. sofort umsetzbare Outlook-/Copilot-Routinen
 4. technische Copilot-Diagnose
 5. pragmatisches Zielbild
-6. mögliche Unterstützung durch SimpleA
-7. gemeinsame Priorisierung
-8. Quellen und Datenrahmen
+6. konkreter Pilotfall „Schadensmeldung per E-Mail“ mit Prompt, Systemübergaben und messbarer Zeitannahme
+7. mögliche Unterstützung durch SimpleA
+8. gemeinsame Priorisierung
+9. Quellen und Datenrahmen
 
 ## Bedienung
 
@@ -31,7 +32,7 @@ Danach `http://localhost:8090` öffnen.
 
 ## Struktur
 
-- `index.html` – neun Präsentationsfolien
+- `index.html` – zehn Präsentationsfolien
 - `styles.css` – 16:9-Deck, responsive Mobilansicht und Printlayout
 - `script.js` – Navigation, Übersicht und lokale Gesprächsauswahl
 - `tests/verify_site.py` – statische Struktur-, Link- und Mandantengrenzenprüfung

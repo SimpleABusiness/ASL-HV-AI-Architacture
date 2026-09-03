@@ -20,12 +20,14 @@ missing = sorted(set(fragments) - ids)
 assert not missing, f"Missing fragment targets: {missing}"
 
 slides = re.findall(r'<section class="[^"]*\bslide\b[^"]*" id="(folie-\d+)"[^>]*data-title="([^"]+)"', text)
-assert len(slides) == 9, f"Expected 9 presentation slides, got {len(slides)}"
-assert [slide_id for slide_id, _ in slides] == [f"folie-{i}" for i in range(1, 10)], "Slide IDs are not sequential"
+assert len(slides) == 10, f"Expected 10 presentation slides, got {len(slides)}"
+assert [slide_id for slide_id, _ in slides] == [f"folie-{i}" for i in range(1, 11)], "Slide IDs are not sequential"
+footer_numbers = re.findall(r'<footer class="slide-footer">.*?<span>(\d{2})</span></footer>', text)
+assert footer_numbers == [f"{i:02d}" for i in range(1, 11)], f"Footer numbers are not sequential: {footer_numbers}"
 assert text.count('aria-hidden="false"') == 1, "Exactly one slide must be initially visible"
 assert text.count('data-decision=') == 4, "Expected four customer decision options"
 assert text.count('aria-pressed="false"') == 4, "Decision options need accessible pressed states"
-assert text.count('tabindex="-1"') == 9, "All slides must be programmatically focusable"
+assert text.count('tabindex="-1"') == 10, "All slides must be programmatically focusable"
 assert 'role="dialog"' in text and 'aria-modal="true"' in text, "Outline must be a modal dialog"
 assert 'fonts.googleapis.com' not in text + css, "Client deck must not load remote font CSS"
 for external_link in re.findall(r'<a\b[^>]*target="_blank"[^>]*>', text):
@@ -45,6 +47,10 @@ required = (
     "ASL prüft, entscheidet, sendet",
     "Keine autonome Außenkommunikation",
     "Gesprächsentwurf",
+    "Schadensmeldung rein",
+    "46 Stunden Kapazität/Jahr",
+    "etg24 REST-API oder Microsoft Graph/Power Automate",
+    "Zeitwerte sind Annahmen",
 )
 for phrase in required:
     assert phrase in text, f"Required presentation content missing: {phrase}"
