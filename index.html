@@ -19,7 +19,15 @@
       </a>
       <div class="session-label"><i></i> Gesprächsentwurf · gemeinsam prüfen</div>
       <div class="presenter-actions">
-        <button class="fullscreen-toggle" type="button" aria-pressed="false" aria-label="Vollbildmodus starten">Vollbild <kbd>F</kbd></button>
+        <div class="view-mode">
+          <button class="view-mode-toggle" type="button" aria-controls="view-mode-menu" aria-expanded="false">Ansicht <kbd>F</kbd><span aria-hidden="true">⌄</span></button>
+          <div class="view-mode-menu" id="view-mode-menu" role="group" aria-label="Darstellung wählen" hidden>
+            <p>Darstellung wählen</p>
+            <button type="button" data-view-mode="normal" aria-pressed="true"><strong>Normal</strong><small>Header, Navigation und Footer</small></button>
+            <button type="button" data-view-mode="focus" aria-pressed="false"><strong>Ohne HUD</strong><small>Nur die Folie im Browserfenster</small></button>
+            <button type="button" data-view-mode="fullscreen" aria-pressed="false"><strong>Vollbild</strong><small>Komplette Ansicht im Browser-Vollbild</small></button>
+          </div>
+        </div>
         <button class="outline-toggle" type="button" aria-controls="outline" aria-expanded="false">Übersicht <kbd>O</kbd></button>
       </div>
     </header>
@@ -282,7 +290,7 @@
     <aside id="outline" class="outline" role="dialog" aria-modal="true" aria-labelledby="outline-title" aria-hidden="true">
       <div class="outline-head"><div><span>ASL × SimpleA</span><strong id="outline-title">Präsentationsübersicht</strong></div><button type="button" class="outline-close" aria-label="Übersicht schließen">×</button></div>
       <nav aria-label="Folienübersicht"></nav>
-      <p class="keyboard-help"><kbd>←</kbd><kbd>→</kbd> navigieren · <kbd>1–9</kbd> direkte Folie · <kbd>0</kbd> Folie 10 · <kbd>F</kbd> Vollbild · <kbd>O</kbd> Übersicht</p>
+      <p class="keyboard-help"><kbd>←</kbd><kbd>→</kbd> navigieren · <kbd>1–9</kbd> direkte Folie · <kbd>0</kbd> Folie 10 · <kbd>F</kbd> Ansichtsmenü · <kbd>O</kbd> Übersicht · <kbd>Esc</kbd> Normalmodus</p>
     </aside>
     <div class="outline-backdrop"></div>
 

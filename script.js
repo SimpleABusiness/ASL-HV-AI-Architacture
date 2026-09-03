@@ -7,7 +7,9 @@ const progress = document.querySelector('.deck-progress span');
 const outline = document.querySelector('#outline');
 const outlineNav = outline.querySelector('nav');
 const outlineToggle = document.querySelector('.outline-toggle');
-const fullscreenToggle = document.querySelector('.fullscreen-toggle');
+const viewModeToggle = document.querySelector('.view-mode-toggle');
+const viewModeMenu = document.querySelector('#view-mode-menu');
+const viewModeButtons = [...document.querySelectorAll('[data-view-mode]')];
 const outlineClose = document.querySelector('.outline-close');
 const backdrop = document.querySelector('.outline-backdrop');
 const selectionText = document.querySelector('#selectionText');
@@ -148,37 +150,65 @@ function trapOutlineFocus(event) {
   }
 }
 
-function setPresentationMode(active) {
-  document.documentElement.classList.toggle('presentation-mode', active);
-  fullscreenToggle.setAttribute('aria-pressed', String(active));
-  fullscreenToggle.setAttribute('aria-label', active ? 'Vollbildmodus beenden' : 'Vollbildmodus starten');
-  if (active) slides[current].focus({ preventScroll: true });
-  else fullscreenToggle.focus({ preventScroll: true });
+function currentViewMode() {
+  if (document.fullscreenElement) return 'fullscreen';
+  if (document.documentElement.classList.contains('hud-free-mode')) return 'focus';
+  return 'normal';
 }
 
-async function togglePresentationMode() {
-  const active = document.documentElement.classList.contains('presentation-mode');
-  if (active) {
-    setPresentationMode(false);
+function syncViewMode() {
+  const mode = currentViewMode();
+  viewModeButtons.forEach((button) => {
+    button.setAttribute('aria-pressed', String(button.dataset.viewMode === mode));
+  });
+  const label = mode === 'focus' ? 'Ohne HUD' : mode === 'fullscreen' ? 'Vollbild' : 'Ansicht';
+  viewModeToggle.firstChild.textContent = `${label} `;
+}
+
+function setViewMenu(open, { focus = true } = {}) {
+  viewModeMenu.hidden = !open;
+  viewModeToggle.setAttribute('aria-expanded', String(open));
+  if (open && focus) viewModeButtons[0]?.focus();
+  if (!open && focus) viewModeToggle.focus();
+}
+
+function openViewMenu() {
+  if (currentViewMode() === 'focus') {
+    document.documentElement.classList.remove('hud-free-mode');
+    syncViewMode();
+  }
+  setViewMenu(true);
+}
+
+async function setViewMode(mode) {
+  setOutline(false);
+  setViewMenu(false, { focus: false });
+
+  if (mode === 'fullscreen') {
+    document.documentElement.classList.remove('hud-free-mode');
+    if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+      try {
+        await document.documentElement.requestFullscreen();
+      } catch {
+        syncViewMode();
+        viewModeToggle.focus({ preventScroll: true });
+        return;
+      }
+    }
+  } else {
     if (document.fullscreenElement && document.exitFullscreen) {
       try {
         await document.exitFullscreen();
       } catch {
-        // The CSS presentation mode has already been closed.
+        // Keep the current browser state when fullscreen cannot be closed programmatically.
       }
     }
-    return;
+    document.documentElement.classList.toggle('hud-free-mode', mode === 'focus');
   }
 
-  setOutline(false);
-  setPresentationMode(true);
-  if (document.documentElement.requestFullscreen) {
-    try {
-      await document.documentElement.requestFullscreen();
-    } catch {
-      // Keep the distraction-free CSS mode when native fullscreen is unavailable.
-    }
-  }
+  syncViewMode();
+  if (mode === 'focus') slides[current].focus({ preventScroll: true });
+  else viewModeToggle.focus({ preventScroll: true });
 }
 
 function setDecision(value) {
@@ -209,7 +239,12 @@ function setConcept(value) {
 prevButton.addEventListener('click', () => showSlide(current - 1));
 nextButton.addEventListener('click', () => showSlide(current + 1));
 outlineToggle.addEventListener('click', () => setOutline(!outline.classList.contains('open')));
-fullscreenToggle.addEventListener('click', togglePresentationMode);
+viewModeToggle.addEventListener('click', () => {
+  setViewMenu(viewModeMenu.hidden);
+});
+viewModeButtons.forEach((button) => {
+  button.addEventListener('click', () => setViewMode(button.dataset.viewMode));
+});
 outlineClose.addEventListener('click', () => setOutline(false));
 backdrop.addEventListener('click', () => setOutline(false));
 decisionButtons.forEach((button) => button.addEventListener('click', () => setDecision(button.dataset.decision)));
@@ -220,9 +255,36 @@ conceptButtons.forEach((button) => {
   button.addEventListener('click', selectConcept);
 });
 
+document.addEventListener('pointerdown', (event) => {
+  const target = event.target instanceof Element ? event.target : null;
+  if (!viewModeMenu.hidden && !target?.closest('.view-mode')) {
+    setViewMenu(false, { focus: false });
+  }
+});
+
 document.addEventListener('keydown', (event) => {
   const target = event.target instanceof Element ? event.target : null;
   const outlineIsOpen = outline.classList.contains('open');
+  const modeMenuIsOpen = !viewModeMenu.hidden;
+
+  if (modeMenuIsOpen) {
+    if (event.key === 'Escape' || event.key.toLowerCase() === 'f') {
+      event.preventDefault();
+      setViewMenu(false);
+      return;
+    }
+    if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+      event.preventDefault();
+      const activeIndex = viewModeButtons.indexOf(document.activeElement);
+      const nextIndex = event.key === 'Home'
+        ? 0
+        : event.key === 'End'
+          ? viewModeButtons.length - 1
+          : (activeIndex + (event.key === 'ArrowDown' ? 1 : -1) + viewModeButtons.length) % viewModeButtons.length;
+      viewModeButtons[nextIndex].focus();
+    }
+    return;
+  }
 
   if (outlineIsOpen) {
     if (event.key === 'Tab') trapOutlineFocus(event);
@@ -233,19 +295,25 @@ document.addEventListener('keydown', (event) => {
     if (event.key.toLowerCase() === 'f' && !event.ctrlKey && !event.metaKey && !event.altKey) {
       event.preventDefault();
       setOutline(false);
-      togglePresentationMode();
+      openViewMenu();
     }
     return;
   }
 
-  if (event.key === 'Escape' && document.documentElement.classList.contains('presentation-mode')) {
+  if (event.key === 'Escape' && currentViewMode() !== 'normal') {
     event.preventDefault();
-    togglePresentationMode();
+    setViewMode('normal');
     return;
   }
 
   if (target?.matches('input, textarea, select') || target?.isContentEditable) return;
   if (target?.matches('button, a') && event.key === ' ') return;
+
+  if (event.key.toLowerCase() === 'f' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+    event.preventDefault();
+    openViewMenu();
+    return;
+  }
 
   if (!event.ctrlKey && !event.metaKey && !event.altKey && /^[0-9]$/.test(event.key)) {
     const slideNumber = event.key === '0' ? 10 : Number.parseInt(event.key, 10);
@@ -266,16 +334,10 @@ document.addEventListener('keydown', (event) => {
   }
   if (event.key === 'Home') showSlide(0, { focus: true });
   if (event.key === 'End') showSlide(slides.length - 1, { focus: true });
-  if (event.key.toLowerCase() === 'f' && !event.ctrlKey && !event.metaKey && !event.altKey) {
-    event.preventDefault();
-    togglePresentationMode();
-  }
   if (event.key.toLowerCase() === 'o') setOutline(true);
 });
 
-document.addEventListener('fullscreenchange', () => {
-  setPresentationMode(Boolean(document.fullscreenElement));
-});
+document.addEventListener('fullscreenchange', syncViewMode);
 
 window.addEventListener('hashchange', () => {
   const hashIndex = slides.findIndex((slide) => `#${slide.id}` === window.location.hash);
@@ -285,4 +347,5 @@ window.addEventListener('hashchange', () => {
 buildOutline();
 setDecision(storageGet(decisionKey));
 setConcept('skill');
+syncViewMode();
 showSlide(initialSlide());
