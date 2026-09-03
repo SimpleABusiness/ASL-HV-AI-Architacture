@@ -32,7 +32,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--blue-bright); o
 .brand span { padding-left: 15px; border-left: 1px solid var(--line-dark); color: var(--muted-light); font-size: 12px; font-weight: 700; letter-spacing: .03em; }
 .session-label { display: flex; align-items: center; gap: 9px; color: #b7bac4; font-size: 11px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
 .session-label i { width: 7px; height: 7px; background: var(--green); border-radius: 50%; box-shadow: 0 0 0 5px rgb(56 199 147 / 12%); }
-.outline-toggle { justify-self: end; display: flex; align-items: center; gap: 10px; min-height: 42px; padding: 0 14px; border: 1px solid var(--line-dark); color: white; background: rgb(255 255 255 / 6%); border-radius: 999px; cursor: pointer; }
+.presenter-actions { justify-self: end; display: flex; align-items: center; gap: 8px; }
+.outline-toggle, .fullscreen-toggle { display: flex; align-items: center; gap: 10px; min-height: 42px; padding: 0 14px; border: 1px solid var(--line-dark); color: white; background: rgb(255 255 255 / 6%); border-radius: 999px; cursor: pointer; }
+.fullscreen-toggle:hover, .outline-toggle:hover { background: rgb(255 255 255 / 11%); }
 kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 5px; border: 1px solid rgb(255 255 255 / 20%); color: #c8cad2; background: #1c1d22; border-radius: 5px; font: 600 10px/1 var(--font-body); box-shadow: inset 0 -1px rgb(255 255 255 / 8%); }
 
 .deck { position: fixed; inset: 68px 0 64px; display: grid; place-items: center; padding: 20px; }
@@ -332,6 +334,15 @@ h1 em, h2 em { color: var(--blue); font-style: normal; }
 .deck-progress { position: fixed; z-index: 70; inset: auto 0 0; height: 3px; background: rgb(255 255 255 / 8%); }
 .deck-progress span { display: block; width: 0; height: 100%; background: var(--blue); transition: width .25s ease; }
 
+html.presentation-mode body { background: #000; }
+html.presentation-mode .presenter-bar,
+html.presentation-mode .deck-controls,
+html.presentation-mode .deck-progress,
+html.presentation-mode .outline,
+html.presentation-mode .outline-backdrop { display: none !important; }
+html.presentation-mode .deck { inset: 0; padding: 0; }
+html.presentation-mode .slide { width: min(100vw, calc(100dvh * 16 / 9)); box-shadow: none; }
+
 .outline { position: fixed; z-index: 200; inset: 0 0 0 auto; width: min(420px, 92vw); padding: 28px; color: white; background: #08090c; box-shadow: -20px 0 70px rgb(0 0 0 / 45%); transform: translateX(105%); transition: transform .24s ease; }
 .outline.open { transform: none; }
 .outline-backdrop { position: fixed; z-index: 190; inset: 0; background: rgb(0 0 0 / 62%); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
@@ -519,7 +530,11 @@ h1 em, h2 em { color: var(--blue); font-style: normal; }
   .sources-grid strong { font-size: 15px; }
   .source-rule { margin-top: 16px; padding: 15px; font-size: 12px; }
   .deck-controls { bottom: 12px; }
-  .outline-toggle kbd { display: none; }
+  .outline-toggle kbd, .fullscreen-toggle kbd { display: none; }
+  .outline-toggle, .fullscreen-toggle { min-height: 40px; padding: 0 12px; font-size: 12px; }
+
+  html.presentation-mode .deck { position: relative; inset: auto; display: block; min-height: 100dvh; padding: 0; }
+  html.presentation-mode .slide { position: relative; width: 100%; min-height: 100dvh; aspect-ratio: auto; overflow-y: auto; padding: 54px 24px 70px; }
 }
 
 @media print {

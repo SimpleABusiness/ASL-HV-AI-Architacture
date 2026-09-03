@@ -18,6 +18,7 @@ Interaktive, kundentaugliche Gesprächspräsentation für einen gemeinsamen Vor-
 
 - `←` / `→`, `Page Up` / `Page Down` oder Leertaste: Folien wechseln
 - `1` bis `9`: direkt zur entsprechenden Folie, `0`: direkt zu Folie 10
+- `F` oder „Vollbild“: ablenkungsfreien Präsentationsmodus starten; `F` oder `Esc`: beenden
 - `Home` / `End`: erste bzw. letzte Folie
 - `O`: Folienübersicht
 - Auswahl auf der Entscheidungsfolie bleibt lokal im Browser gespeichert

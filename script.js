@@ -7,6 +7,7 @@ const progress = document.querySelector('.deck-progress span');
 const outline = document.querySelector('#outline');
 const outlineNav = outline.querySelector('nav');
 const outlineToggle = document.querySelector('.outline-toggle');
+const fullscreenToggle = document.querySelector('.fullscreen-toggle');
 const outlineClose = document.querySelector('.outline-close');
 const backdrop = document.querySelector('.outline-backdrop');
 const selectionText = document.querySelector('#selectionText');
@@ -147,6 +148,39 @@ function trapOutlineFocus(event) {
   }
 }
 
+function setPresentationMode(active) {
+  document.documentElement.classList.toggle('presentation-mode', active);
+  fullscreenToggle.setAttribute('aria-pressed', String(active));
+  fullscreenToggle.setAttribute('aria-label', active ? 'Vollbildmodus beenden' : 'Vollbildmodus starten');
+  if (active) slides[current].focus({ preventScroll: true });
+  else fullscreenToggle.focus({ preventScroll: true });
+}
+
+async function togglePresentationMode() {
+  const active = document.documentElement.classList.contains('presentation-mode');
+  if (active) {
+    setPresentationMode(false);
+    if (document.fullscreenElement && document.exitFullscreen) {
+      try {
+        await document.exitFullscreen();
+      } catch {
+        // The CSS presentation mode has already been closed.
+      }
+    }
+    return;
+  }
+
+  setOutline(false);
+  setPresentationMode(true);
+  if (document.documentElement.requestFullscreen) {
+    try {
+      await document.documentElement.requestFullscreen();
+    } catch {
+      // Keep the distraction-free CSS mode when native fullscreen is unavailable.
+    }
+  }
+}
+
 function setDecision(value) {
   const validValue = validDecisions.has(value) ? value : null;
   selectionText.textContent = validValue || 'Noch offen – gemeinsam besprechen';
@@ -175,6 +209,7 @@ function setConcept(value) {
 prevButton.addEventListener('click', () => showSlide(current - 1));
 nextButton.addEventListener('click', () => showSlide(current + 1));
 outlineToggle.addEventListener('click', () => setOutline(!outline.classList.contains('open')));
+fullscreenToggle.addEventListener('click', togglePresentationMode);
 outlineClose.addEventListener('click', () => setOutline(false));
 backdrop.addEventListener('click', () => setOutline(false));
 decisionButtons.forEach((button) => button.addEventListener('click', () => setDecision(button.dataset.decision)));
@@ -195,6 +230,17 @@ document.addEventListener('keydown', (event) => {
       event.preventDefault();
       setOutline(false);
     }
+    if (event.key.toLowerCase() === 'f' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+      event.preventDefault();
+      setOutline(false);
+      togglePresentationMode();
+    }
+    return;
+  }
+
+  if (event.key === 'Escape' && document.documentElement.classList.contains('presentation-mode')) {
+    event.preventDefault();
+    togglePresentationMode();
     return;
   }
 
@@ -220,7 +266,15 @@ document.addEventListener('keydown', (event) => {
   }
   if (event.key === 'Home') showSlide(0, { focus: true });
   if (event.key === 'End') showSlide(slides.length - 1, { focus: true });
+  if (event.key.toLowerCase() === 'f' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+    event.preventDefault();
+    togglePresentationMode();
+  }
   if (event.key.toLowerCase() === 'o') setOutline(true);
+});
+
+document.addEventListener('fullscreenchange', () => {
+  setPresentationMode(Boolean(document.fullscreenElement));
 });
 
 window.addEventListener('hashchange', () => {

@@ -46,7 +46,7 @@ Die ausführliche interne Vorbereitung liegt in Freddys Obsidian unter:
 9. gemeinsame Priorisierung,
 10. Quellen und Datenrahmen.
 
-Die Folien lassen sich per Tastatur steuern; die Ziffern `1` bis `9` öffnen direkt die jeweilige Folie, `0` öffnet Folie 10. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
+Die Folien lassen sich per Tastatur steuern; die Ziffern `1` bis `9` öffnen direkt die jeweilige Folie, `0` öffnet Folie 10. `F` beziehungsweise der Button „Vollbild“ startet einen ablenkungsfreien Präsentationsmodus, der Kopfzeile, Navigation und Fortschrittsanzeige ausblendet; `F` oder `Esc` beendet ihn. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
 
 ### Neue Dramaturgie nach dem IST-Prozess
 

@@ -18,7 +18,10 @@
         <span>× ASL Hausverwaltung</span>
       </a>
       <div class="session-label"><i></i> Gesprächsentwurf · gemeinsam prüfen</div>
-      <button class="outline-toggle" type="button" aria-controls="outline" aria-expanded="false">Übersicht <kbd>O</kbd></button>
+      <div class="presenter-actions">
+        <button class="fullscreen-toggle" type="button" aria-pressed="false" aria-label="Vollbildmodus starten">Vollbild <kbd>F</kbd></button>
+        <button class="outline-toggle" type="button" aria-controls="outline" aria-expanded="false">Übersicht <kbd>O</kbd></button>
+      </div>
     </header>
 
     <main id="deck" class="deck" aria-live="polite">
@@ -279,7 +282,7 @@
     <aside id="outline" class="outline" role="dialog" aria-modal="true" aria-labelledby="outline-title" aria-hidden="true">
       <div class="outline-head"><div><span>ASL × SimpleA</span><strong id="outline-title">Präsentationsübersicht</strong></div><button type="button" class="outline-close" aria-label="Übersicht schließen">×</button></div>
       <nav aria-label="Folienübersicht"></nav>
-      <p class="keyboard-help"><kbd>←</kbd><kbd>→</kbd> navigieren · <kbd>1–9</kbd> direkte Folie · <kbd>0</kbd> Folie 10 · <kbd>O</kbd> Übersicht · <kbd>Home</kbd><kbd>End</kbd></p>
+      <p class="keyboard-help"><kbd>←</kbd><kbd>→</kbd> navigieren · <kbd>1–9</kbd> direkte Folie · <kbd>0</kbd> Folie 10 · <kbd>F</kbd> Vollbild · <kbd>O</kbd> Übersicht</p>
     </aside>
     <div class="outline-backdrop"></div>
 

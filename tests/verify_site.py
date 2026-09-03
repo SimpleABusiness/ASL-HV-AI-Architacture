@@ -31,6 +31,7 @@ assert text.count('data-concept=') == 4, "Expected four interactive agent concep
 assert len(re.findall(r'data-concept="[^"]+" aria-pressed="(?:true|false)"', text)) == 4, "Agent concepts need accessible pressed states"
 assert text.count('tabindex="-1"') == 10, "All slides must be programmatically focusable"
 assert 'role="dialog"' in text and 'aria-modal="true"' in text, "Outline must be a modal dialog"
+assert 'class="fullscreen-toggle"' in text and 'aria-pressed="false"' in text, "Fullscreen control needs an accessible toggle state"
 assert 'fonts.googleapis.com' not in text + css, "Client deck must not load remote font CSS"
 for external_link in re.findall(r'<a\b[^>]*target="_blank"[^>]*>', text):
     assert re.search(r'rel="[^"]*(?:noopener|noreferrer)[^"]*"', external_link), "External new-tab link lacks rel protection"
@@ -66,6 +67,7 @@ required = (
     "Stufe 1–2 starten",
     "1–9",
     "direkte Folie",
+    "Vollbild",
 )
 for phrase in required:
     assert phrase in text, f"Required presentation content missing: {phrase}"
@@ -74,4 +76,7 @@ assert "localStorage" in (ROOT / "script.js").read_text(encoding="utf-8"), "Pres
 script = (ROOT / "script.js").read_text(encoding="utf-8")
 assert "event.key === '0' ? 10" in script, "Numeric shortcut must map 0 to slide 10"
 assert "showSlide(slideNumber - 1" in script, "Numeric shortcut must open the selected slide"
+assert "requestFullscreen" in script and "exitFullscreen" in script, "Fullscreen API integration is missing"
+assert "event.key.toLowerCase() === 'f'" in script, "Fullscreen keyboard shortcut is missing"
+assert "presentation-mode" in script and "presentation-mode" in css, "Presentation mode must be implemented in script and CSS"
 print(f"OK: {len(slides)} slides, {len(fragments)} internal links, local assets, guardrails and client boundary verified")
