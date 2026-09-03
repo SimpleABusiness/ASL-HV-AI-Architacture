@@ -6,14 +6,15 @@ Interaktive, kundentaugliche Gesprächspräsentation für einen gemeinsamen Vor-
 
 1. heutige Systemlandschaft
 2. manuelle Arbeit, Übergaben und Kontextwechsel
-3. sofort umsetzbare Outlook-/Copilot-Routinen
-4. technische Copilot-Diagnose
-5. pragmatisches Zielbild
-6. interaktive Zielarchitektur für einen möglichen ASL-Agenten
-7. konkreter Pilotfall „Schadensmeldung per E-Mail“ mit Prompt, Systemübergaben und messbarer Zeitannahme
-8. mögliche Unterstützung durch SimpleA
-9. gemeinsame Priorisierung
-10. Quellen und Datenrahmen
+3. direkter IST-/SOLL-Vergleich des Vorgangs
+4. vier aufeinander aufbauende AI-Integrationsstufen
+5. sofort umsetzbare Outlook-/Copilot-Routinen
+6. technische Copilot-Diagnose
+7. interaktive Zielarchitektur für einen möglichen ASL-Agenten
+8. konkreter Pilotfall „Schadensmeldung per E-Mail“ mit Prompt, Systemübergaben und messbarer Zeitannahme
+9. mögliche Unterstützung durch SimpleA
+10. gemeinsame Priorisierung
+11. Quellen und Datenrahmen
 
 ## Bedienung
 
@@ -34,7 +35,7 @@ Danach `http://localhost:8090` öffnen.
 
 ## Struktur
 
-- `index.html` – elf Präsentationsfolien
+- `index.html` – zwölf Präsentationsfolien
 - `styles.css` – 16:9-Deck, responsive Mobilansicht und Printlayout
 - `script.js` – Navigation, Übersicht und lokale Gesprächsauswahl
 - `tests/verify_site.py` – statische Struktur-, Link- und Mandantengrenzenprüfung

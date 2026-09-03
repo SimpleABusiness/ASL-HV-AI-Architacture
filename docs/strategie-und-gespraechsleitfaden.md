@@ -33,21 +33,28 @@ Die ausführliche interne Vorbereitung liegt in Freddys Obsidian unter:
 
 ## Kundenpräsentation
 
-`index.html` ist eine interaktive Präsentation mit elf Folien:
+`index.html` ist eine interaktive Präsentation mit zwölf Folien:
 
 1. Gesprächseinstieg,
 2. vorhandene Systemlandschaft,
 3. sichtbare manuelle Arbeit und Kontextwechsel am heutigen Beispielprozess,
-4. drei sofort testbare Outlook-/Copilot-Routinen,
-5. Copilot-Diagnose,
-6. pragmatisches Zielbild,
-7. interaktive Zielarchitektur eines möglichen ASL-Agenten mit Laufzeit, Tools, Wissen, Memory, Workflow und Freigabegrenze,
-8. konkreter Pilotfall „Schadensmeldung per E-Mail“ inklusive Prompt, Systemübergaben und Zeitmessung,
-9. mögliche SimpleA-Unterstützung,
-10. gemeinsame Priorisierung,
-11. Quellen und Datenrahmen.
+4. optimierter SOLL-Prozess im direkten Vergleich zum IST,
+5. Reifeweg von heutiger Einzelnutzung über Skills und verbundene Workflows bis zu begrenzter Agentic AI,
+6. drei sofort testbare Outlook-/Copilot-Routinen,
+7. Copilot-Diagnose,
+8. interaktive Zielarchitektur eines möglichen ASL-Agenten mit Laufzeit, Tools, Wissen, Memory, Workflow und Freigabegrenze,
+9. konkreter Pilotfall „Schadensmeldung per E-Mail“ inklusive Prompt, Systemübergaben und Zeitmessung,
+10. mögliche SimpleA-Unterstützung,
+11. gemeinsame Priorisierung,
+12. Quellen und Datenrahmen.
 
 Die Folien lassen sich per Tastatur steuern. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
+
+### Neue Dramaturgie nach dem IST-Prozess
+
+Auf die heutige manuelle Prozesskette folgt unmittelbar derselbe Vorgang als SOLL-Hypothese: Eingang → einmal strukturieren → gezielten Kontext beziehen → Entwurf und Vorgang vorbereiten → Freigabe durch Anita. Der direkte Vergleich macht klar, dass nicht „AI macht alles“, sondern weniger Wiederholung und kontrollierte Übergaben das Ziel sind.
+
+Die folgende Reifestufen-Folie trennt vier Ausbaustufen: heutiger AI-Assistent mit Einzelprompt, wiederverwendbare Skills, verbundener Workflow mit Tools und freigegebenem Kontext sowie Agentic AI als spätere Zieloption. Empfehlung für ASL: Stufe 1–2 stabilisieren und genau einen Prozess bis Stufe 3 pilotieren; Stufe 4 erst nach messbarem Nutzen, Governance und technischen Tests.
 
 ### Agenten-Zielbild
 
