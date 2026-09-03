@@ -36,7 +36,7 @@ Danach `http://localhost:8090` öffnen.
 - `styles.css` – 16:9-Deck, responsive Mobilansicht und Printlayout
 - `script.js` – Navigation, Übersicht und lokale Gesprächsauswahl
 - `tests/verify_site.py` – statische Struktur-, Link- und Mandantengrenzenprüfung
-- `.github/workflows/pages.yml` – Prüfung bei Push, manuelles Pages-Deployment
+- `.github/workflows/pages.yml` – Prüfung und automatisches Pages-Deployment bei jedem Push auf `main`
 
 ## Leitplanken
 
@@ -48,4 +48,4 @@ Danach `http://localhost:8090` öffnen.
 
 ## Veröffentlichung
 
-Die CI-Prüfung läuft auf jedem Push. GitHub Pages wird absichtlich nur manuell veröffentlicht. Vor einer öffentlichen Freigabe Repository-Sichtbarkeit und Kundenfreigabe prüfen.
+Jeder Push auf `main` führt zuerst die statische Prüfung aus und deployt den geprüften Stand anschließend automatisch über GitHub Pages. `workflow_dispatch` bleibt für einen manuellen Wiederholungslauf verfügbar.

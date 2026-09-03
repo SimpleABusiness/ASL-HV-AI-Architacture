@@ -1,4 +1,4 @@
-name: Verify and optionally deploy static site
+name: Verify and deploy static site
 
 on:
   push:
@@ -23,7 +23,6 @@ jobs:
         run: python3 tests/verify_site.py
 
   deploy:
-    if: github.event_name == 'workflow_dispatch'
     needs: verify
     environment:
       name: github-pages
