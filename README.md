@@ -5,14 +5,15 @@ Interaktive, kundentaugliche Gesprächspräsentation für einen gemeinsamen Vor-
 ## Präsentationslogik
 
 1. heutige Systemlandschaft
-2. Reibung und Optimierungspotenzial
+2. manuelle Arbeit, Übergaben und Kontextwechsel
 3. sofort umsetzbare Outlook-/Copilot-Routinen
 4. technische Copilot-Diagnose
 5. pragmatisches Zielbild
-6. konkreter Pilotfall „Schadensmeldung per E-Mail“ mit Prompt, Systemübergaben und messbarer Zeitannahme
-7. mögliche Unterstützung durch SimpleA
-8. gemeinsame Priorisierung
-9. Quellen und Datenrahmen
+6. interaktive Zielarchitektur für einen möglichen ASL-Agenten
+7. konkreter Pilotfall „Schadensmeldung per E-Mail“ mit Prompt, Systemübergaben und messbarer Zeitannahme
+8. mögliche Unterstützung durch SimpleA
+9. gemeinsame Priorisierung
+10. Quellen und Datenrahmen
 
 ## Bedienung
 
@@ -20,6 +21,7 @@ Interaktive, kundentaugliche Gesprächspräsentation für einen gemeinsamen Vor-
 - `Home` / `End`: erste bzw. letzte Folie
 - `O`: Folienübersicht
 - Auswahl auf der Entscheidungsfolie bleibt lokal im Browser gespeichert
+- Hover, Fokus oder Klick auf der Architekturfolie erklärt Skills, Tools, Workflows und Memory
 - Drucken erzeugt eine Folie pro Seite
 
 ## Lokal öffnen
@@ -32,7 +34,7 @@ Danach `http://localhost:8090` öffnen.
 
 ## Struktur
 
-- `index.html` – zehn Präsentationsfolien
+- `index.html` – elf Präsentationsfolien
 - `styles.css` – 16:9-Deck, responsive Mobilansicht und Printlayout
 - `script.js` – Navigation, Übersicht und lokale Gesprächsauswahl
 - `tests/verify_site.py` – statische Struktur-, Link- und Mandantengrenzenprüfung

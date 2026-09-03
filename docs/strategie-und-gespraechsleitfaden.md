@@ -33,20 +33,27 @@ Die ausführliche interne Vorbereitung liegt in Freddys Obsidian unter:
 
 ## Kundenpräsentation
 
-`index.html` ist eine interaktive Präsentation mit zehn Folien:
+`index.html` ist eine interaktive Präsentation mit elf Folien:
 
 1. Gesprächseinstieg,
 2. vorhandene Systemlandschaft,
-3. Übergaben und Optimierungspotenzial,
+3. sichtbare manuelle Arbeit und Kontextwechsel am heutigen Beispielprozess,
 4. drei sofort testbare Outlook-/Copilot-Routinen,
 5. Copilot-Diagnose,
 6. pragmatisches Zielbild,
-7. konkreter Pilotfall „Schadensmeldung per E-Mail“ inklusive Prompt, Systemübergaben und Zeitmessung,
-8. mögliche SimpleA-Unterstützung,
-9. gemeinsame Priorisierung,
-10. Quellen und Datenrahmen.
+7. interaktive Zielarchitektur eines möglichen ASL-Agenten mit Laufzeit, Tools, Wissen, Memory, Workflow und Freigabegrenze,
+8. konkreter Pilotfall „Schadensmeldung per E-Mail“ inklusive Prompt, Systemübergaben und Zeitmessung,
+9. mögliche SimpleA-Unterstützung,
+10. gemeinsame Priorisierung,
+11. Quellen und Datenrahmen.
 
 Die Folien lassen sich per Tastatur steuern. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
+
+### Agenten-Zielbild
+
+Die Architekturfolie zeigt bewusst eine **Zieloption**, keinen bestätigten Ist-Stand: Anita interagiert in Teams oder Microsoft 365 Copilot mit einem ASL-Agenten. Als bevorzugte Microsoft-native Laufzeit werden Copilot Studio und Power Platform im ASL-Tenant geprüft. Power Automate übernimmt ereignisgesteuerte Abläufe; Outlook-Connector und eine geprüfte etg24-REST-API sind mögliche Tools. SharePoint/OneDrive liefern freigegebenes Wissen, SharePoint Lists oder Dataverse ausschließlich bestätigten Vorgangs- und Kontextstatus. Die Altsoftware bleibt zunächst ein manueller Kontrollpunkt.
+
+Die Begriffe `Skill`, `Tool`, `Workflow` und `Memory` werden auf der Folie interaktiv erklärt. „Skill“ ist hier eine verständliche fachliche Bezeichnung für eine wiederverwendbare Fähigkeit aus Anweisung, Prompt, Prüfschritten und gegebenenfalls Agent Flow – keine unbestätigte Microsoft-Produktbezeichnung. Externe Kommunikation sowie Rechts-, Zahlungs- und Vertragsentscheidungen bleiben bei Anita.
 
 ### Pilotfall und Zeitmessung
 

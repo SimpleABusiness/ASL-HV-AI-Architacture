@@ -58,29 +58,49 @@
         <footer class="slide-footer"><span>Vorab bekannt · Details im Termin bestätigen</span><span>02</span></footer>
       </section>
 
-      <section class="slide slide-dark" id="folie-3" data-title="Optimierungspotenzial" aria-hidden="true" tabindex="-1">
+      <section class="slide slide-dark" id="folie-3" data-title="Manuelle Arbeit & Kontextwechsel" aria-hidden="true" tabindex="-1">
         <div class="slide-head compact">
           <p class="eyebrow">02 · Optimierungspotenzial</p>
-          <h2>Nicht zu wenig Tools.<br /><em>Zu viele Übergaben.</em></h2>
+          <h2>Heute hält Anita<br /><em>die Systeme zusammen.</em></h2>
+          <p>Arbeitshypothese für den Termin: Nicht ein einzelner Schritt kostet Zeit, sondern das wiederholte Lesen, Suchen und Übertragen zwischen getrennten Kontexten.</p>
         </div>
-        <div class="journey" aria-label="Typischer Vorgang mit möglichen Reibungsverlusten">
-          <article><span>01</span><strong>Eingang</strong><small>Mail · Telefon · Portal</small></article><i></i>
-          <article class="hot"><span>02</span><strong>Verstehen</strong><small>Was ist passiert?</small><b>Lesen</b></article><i></i>
-          <article class="hot"><span>03</span><strong>Suchen</strong><small>Objekt · Historie · Dokument</small><b>Suchen</b></article><i></i>
-          <article><span>04</span><strong>Entscheiden</strong><small>Was ist zu tun?</small></article><i></i>
-          <article class="hot"><span>05</span><strong>Übertragen</strong><small>etg24 · Liste · Papier</small><b>Doppelt</b></article><i></i>
-          <article><span>06</span><strong>Antworten</strong><small>Entwurf · Prüfung · Versand</small></article>
+        <div class="manual-journey" aria-label="Typischer heutiger Vorgang mit manuellen Arbeitsschritten und Systemwechseln">
+          <article>
+            <span class="system-tag">Outlook</span><strong>Anfrage verstehen</strong>
+            <small>Mail und Anhänge lesen, Objekt und Anliegen selbst einordnen.</small>
+            <b>manuell lesen</b>
+          </article>
+          <i><span>Kontextwechsel 1</span>→</i>
+          <article>
+            <span class="system-tag">etg24 · Altsoftware · Papier</span><strong>Kontext zusammensuchen</strong>
+            <small>Historie, Kontaktdaten, Dokumente und offenen Stand abgleichen.</small>
+            <b>manuell suchen</b>
+          </article>
+          <i><span>Kontextwechsel 2</span>→</i>
+          <article>
+            <span class="system-tag">Kopf · Notiz · Liste</span><strong>Entscheidung vorbereiten</strong>
+            <small>Dringlichkeit, Zuständigkeit und fehlende Angaben zusammenführen.</small>
+            <b>manuell bewerten</b>
+          </article>
+          <i><span>Kontextwechsel 3</span>→</i>
+          <article>
+            <span class="system-tag">etg24 · Fachsoftware</span><strong>Vorgang übertragen</strong>
+            <small>Daten erneut eingeben, Status setzen und Aufgabe anlegen.</small>
+            <b>manuell erfassen</b>
+          </article>
+          <i><span>zurück zu Outlook</span>→</i>
+          <article>
+            <span class="system-tag">Outlook</span><strong>Antwort formulieren</strong>
+            <small>Fakten erneut prüfen, Antwort schreiben und Wiedervorlage merken.</small>
+            <b>manuell schreiben</b>
+          </article>
         </div>
-        <div class="potential-layout">
-          <div class="big-statement"><span>Die größte Chance</span><strong>Information einmal verstehen – danach gezielt weiterverwenden.</strong></div>
-          <div class="friction-list">
-            <p><b>Suchzeit:</b> Informationen liegen an mehreren Orten.</p>
-            <p><b>Medienbruch:</b> Mail, Portal, Fachsoftware und Papier sind nicht verbunden.</p>
-            <p><b>Wiedervorlage:</b> Offene Punkte bleiben im Kopf oder Postfach.</p>
-            <p><b>KI-Frust:</b> Copilot bekommt nicht den erwarteten Kontext oder Auftrag.</p>
-          </div>
+        <div class="friction-summary">
+          <div><span>Im Beispiel sichtbar</span><strong>4</strong><small>Arbeitskontexte</small></div>
+          <div><span>Im Beispiel sichtbar</span><strong>4</strong><small>Übergaben</small></div>
+          <blockquote><span>Der Hebel</span><strong>Kontext einmal sammeln – danach für Vorgang, Entwurf und Wiedervorlage kontrolliert wiederverwenden.</strong></blockquote>
         </div>
-        <footer class="slide-footer"><span>Hypothesen – im Gespräch an einem echten Vorgang prüfen</span><span>03</span></footer>
+        <footer class="slide-footer"><span>Prozesshypothese – am echten Vorgang bestätigen und Zeiten messen</span><span>03</span></footer>
       </section>
 
       <section class="slide slide-blue" id="folie-4" data-title="Sofortmaßnahmen" aria-hidden="true" tabindex="-1">
@@ -156,10 +176,55 @@
         <footer class="slide-footer"><span>Zielbild als Gesprächsentwurf</span><span>06</span></footer>
       </section>
 
-      <section class="slide slide-case" id="folie-7" data-title="Konkreter Pilotfall" aria-hidden="true" tabindex="-1">
+      <section class="slide slide-agent-map" id="folie-7" data-title="Zielarchitektur: ASL-Agent" aria-hidden="true" tabindex="-1">
+        <div class="agent-head">
+          <div>
+            <p class="eyebrow">06 · Zielarchitektur als Option</p>
+            <h2>Anita spricht mit <em>einem Agenten.</em><br />Der Agent nutzt den passenden Baustein.</h2>
+          </div>
+          <div class="runtime-card"><span>Wo läuft er?</span><strong>Copilot Studio / Power Platform</strong><small>im ASL-Microsoft-365-Tenant · Lizenz und Datenschutz vorab prüfen</small></div>
+        </div>
+
+        <div class="agent-network" aria-label="Vorgeschlagene Zielarchitektur des ASL-Agenten">
+          <svg class="agent-links" viewBox="0 0 1000 280" aria-hidden="true" focusable="false">
+            <defs><marker id="agent-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z"></path></marker></defs>
+            <path d="M176 138 H380"></path>
+            <path d="M620 138 H805"></path>
+            <path d="M500 86 V44"></path>
+            <path d="M450 190 L344 238"></path>
+            <path d="M550 190 L658 238"></path>
+          </svg>
+          <article class="agent-node person"><span>Interaktion</span><strong>Anita</strong><small>Teams oder Microsoft 365 Copilot</small></article>
+          <article class="agent-node trigger"><span>läuft auch ohne Prompt</span><strong>Power Automate</strong><small>E-Mail-Trigger · Routing · Wiedervorlage</small></article>
+          <article class="agent-core"><span>ASL-Agent</span><strong>versteht den Auftrag,<br />wählt Skill und Tool</strong><small>antwortet · schlägt vor · führt begrenzte Schritte aus</small></article>
+          <article class="agent-node tools"><span>Tools</span><strong>Outlook · etg24</strong><small>Microsoft-Connector · REST-API nach Prüfung</small></article>
+          <article class="agent-node legacy"><span>Ausnahme</span><strong>Altsoftware</strong><small>zunächst manuell; später nur über belastbaren Adapter</small></article>
+          <article class="agent-node knowledge"><span>Wissen</span><strong>SharePoint / OneDrive</strong><small>Vorlagen · Prozesse · freigegebene Dokumente</small></article>
+          <article class="agent-node memory"><span>Memory</span><strong>SharePoint-Liste / Dataverse</strong><small>Vorgangsstatus · bestätigte Fakten · Quellen</small></article>
+          <div class="approval-gate"><span>Freigabegrenze</span><strong>Anita prüft externe Kommunikation und Entscheidungen.</strong></div>
+        </div>
+
+        <div class="concept-explorer">
+          <div class="concept-buttons" aria-label="Begriffe der Agentenarchitektur">
+            <button type="button" class="active" data-concept="skill" aria-pressed="true">Skill</button>
+            <button type="button" data-concept="tool" aria-pressed="false">Tool</button>
+            <button type="button" data-concept="workflow" aria-pressed="false">Workflow</button>
+            <button type="button" data-concept="memory" aria-pressed="false">Memory</button>
+          </div>
+          <div class="concept-detail" aria-live="polite">
+            <span id="conceptKind">Skill · wiederverwendbares Können</span>
+            <strong id="conceptTitle">„Schadensmeldung verstehen“</strong>
+            <p id="conceptText">Feste Fachanweisung mit Eingaben, Prüfschritten und Ausgabeformat – Anita muss den Prompt nicht jedes Mal neu formulieren.</p>
+          </div>
+          <p class="concept-help">Hover, Fokus oder Klick zeigt die Erklärung.</p>
+        </div>
+        <footer class="slide-footer"><span>Zieloption – Produkt, Lizenz, Schnittstellen und Datenhaltung im Pilot bestätigen</span><span>07</span></footer>
+      </section>
+
+      <section class="slide slide-case" id="folie-8" data-title="Konkreter Pilotfall" aria-hidden="true" tabindex="-1">
         <div class="case-head">
           <div>
-            <p class="eyebrow">06 · Handfestes Pilotbeispiel</p>
+            <p class="eyebrow">07 · Handfestes Pilotbeispiel</p>
             <h2>Schadensmeldung rein.<br /><em>Geprüfter Vorgang raus.</em></h2>
           </div>
           <div class="case-signal"><span>Beispiel</span><strong>Wasserleck per E-Mail</strong><small>Kein automatischer Versand</small></div>
@@ -180,12 +245,12 @@
           </div>
         </div>
         <div class="pilot-rule"><strong>Stufe 1:</strong> vorhandene Oberflächen nutzen · <strong>Stufe 2:</strong> etg24 REST-API oder Microsoft Graph/Power Automate nur nach technischem, lizenzseitigem und datenschutzbezogenem Check</div>
-        <footer class="slide-footer"><span>Zeitwerte sind Annahmen – Baseline und Ergebnis im Pilot messen</span><span>07</span></footer>
+        <footer class="slide-footer"><span>Zeitwerte sind Annahmen – Baseline und Ergebnis im Pilot messen</span><span>08</span></footer>
       </section>
 
-      <section class="slide slide-light" id="folie-8" data-title="SimpleA Unterstützung" aria-hidden="true" tabindex="-1">
+      <section class="slide slide-light" id="folie-9" data-title="SimpleA Unterstützung" aria-hidden="true" tabindex="-1">
         <div class="slide-head compact">
-          <p class="eyebrow">07 · Wo SimpleA unterstützt</p>
+          <p class="eyebrow">08 · Wo SimpleA unterstützt</p>
           <h2>Klein anfangen.<br /><em>Nur weitergehen, wenn es hilft.</em></h2>
         </div>
         <div class="support-path">
@@ -196,13 +261,13 @@
           <article class="support-step"><span>Optional</span><h3>Kontrollierter Pilot</h3><p>Einen klar begrenzten Prozess verbinden oder automatisieren – mit menschlicher Freigabe.</p><ul><li>ein Eingangskanal</li><li>messbare Testfälle</li><li>Rollback und Kontrolle</li></ul><b>Messbarer Praxistest</b></article>
         </div>
         <aside class="plain-promise"><span>SimpleA-Versprechen</span><strong>Kein Toolverkauf um jeden Preis. Erst wenn der Nutzen im Alltag sichtbar ist, wird technisch ausgebaut.</strong></aside>
-        <footer class="slide-footer"><span>Umfang und Angebot erst nach der Ist-Aufnahme</span><span>08</span></footer>
+        <footer class="slide-footer"><span>Umfang und Angebot erst nach der Ist-Aufnahme</span><span>09</span></footer>
       </section>
 
-      <section class="slide slide-decision" id="folie-9" data-title="Gemeinsame Entscheidung" aria-hidden="true" tabindex="-1">
+      <section class="slide slide-decision" id="folie-10" data-title="Gemeinsame Entscheidung" aria-hidden="true" tabindex="-1">
         <div class="slide-grid decision-grid">
           <div class="slide-copy">
-            <p class="eyebrow">08 · Gemeinsame Auswahl</p>
+            <p class="eyebrow">09 · Gemeinsame Auswahl</p>
             <h2>Was würde heute<br /><em>am meisten entlasten?</em></h2>
             <p class="lead small">Die Auswahl bleibt nur in diesem Browser gespeichert und hilft uns, den nächsten Schritt im Gespräch festzuhalten.</p>
           </div>
@@ -215,16 +280,18 @@
           </div>
         </div>
         <div class="next-step"><span>Nächster Schritt</span><strong>Einen typischen Vorgang am echten Arbeitsplatz gemeinsam durchgehen.</strong></div>
-        <footer class="slide-footer"><span>ASL × SimpleA</span><span>09</span></footer>
+        <footer class="slide-footer"><span>ASL × SimpleA</span><span>10</span></footer>
       </section>
 
-      <section class="slide slide-sources" id="folie-10" data-title="Quellen & Rahmen" aria-hidden="true" tabindex="-1">
+      <section class="slide slide-sources" id="folie-11" data-title="Quellen & Rahmen" aria-hidden="true" tabindex="-1">
         <div class="slide-head compact">
           <p class="eyebrow">Anhang</p>
           <h2>Quellen und <em>Rahmen.</em></h2>
           <p>ASL-spezifische Aussagen beruhen auf den vorab mitgeteilten Angaben und werden im Gespräch bestätigt. Produktfunktionen können sich ändern.</p>
         </div>
         <div class="sources-grid">
+          <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Agents für Microsoft 365 Copilot</strong></a>
+          <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-tools-custom-agent" target="_blank" rel="noreferrer"><span>Copilot Studio</span><strong>Tools, Flows, APIs und MCP</strong></a>
           <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Copilot-Lizenzierung</strong></a>
           <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Mindestanforderungen</strong></a>
           <a href="https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook" target="_blank" rel="noreferrer"><span>Microsoft</span><strong>Copilot in Outlook – FAQ</strong></a>
@@ -236,7 +303,7 @@
           <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noreferrer"><span>OpenAI</span><strong>Enterprise Privacy</strong></a>
         </div>
         <div class="source-rule"><strong>Arbeitsregel:</strong> Keine echten Bankdaten, Ausweisdaten oder sensiblen Eigentümerinformationen in ungeprüfte KI-Konten übertragen.</div>
-        <footer class="slide-footer"><span>Stand · 3. September 2026</span><span>10</span></footer>
+        <footer class="slide-footer"><span>Stand · 3. September 2026</span><span>11</span></footer>
       </section>
     </main>
 
@@ -249,7 +316,7 @@
 
     <nav class="deck-controls" aria-label="Präsentationssteuerung">
       <button type="button" class="control prev" aria-label="Vorherige Folie">←</button>
-      <div class="slide-status"><span id="currentSlide">01</span><i></i><span id="totalSlides">10</span></div>
+      <div class="slide-status"><span id="currentSlide">01</span><i></i><span id="totalSlides">11</span></div>
       <button type="button" class="control next" aria-label="Nächste Folie">→</button>
     </nav>
     <div class="deck-progress" aria-hidden="true"><span></span></div>

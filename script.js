@@ -12,6 +12,32 @@ const backdrop = document.querySelector('.outline-backdrop');
 const selectionText = document.querySelector('#selectionText');
 const decisionButtons = [...document.querySelectorAll('[data-decision]')];
 const validDecisions = new Set(decisionButtons.map((button) => button.dataset.decision));
+const conceptButtons = [...document.querySelectorAll('[data-concept]')];
+const conceptKind = document.querySelector('#conceptKind');
+const conceptTitle = document.querySelector('#conceptTitle');
+const conceptText = document.querySelector('#conceptText');
+const concepts = {
+  skill: {
+    kind: 'Skill · wiederverwendbares Können',
+    title: '„Schadensmeldung verstehen“',
+    text: 'Feste Fachanweisung mit Eingaben, Prüfschritten und Ausgabeformat – Anita muss den Prompt nicht jedes Mal neu formulieren.',
+  },
+  tool: {
+    kind: 'Tool · begrenzte Systemaktion',
+    title: '„Outlook-Entwurf anlegen“',
+    text: 'Ein Connector oder eine geprüfte API liest oder schreibt in genau einem System – nur mit den dafür notwendigen Berechtigungen.',
+  },
+  workflow: {
+    kind: 'Workflow · verlässliche Abfolge',
+    title: '„Neue Mail → prüfen → Entwurf“',
+    text: 'Power Automate startet durch ein Ereignis, ruft Skill und Tools in fester Reihenfolge auf und hält bei Ausnahmen oder Freigaben an.',
+  },
+  memory: {
+    kind: 'Memory · bestätigter Kontext',
+    title: '„Objekt, Vorgang und letzter Stand“',
+    text: 'Strukturierte Fakten mit Quelle und Gültigkeit statt freiem KI-Gedächtnis. Fachdaten bleiben im führenden System.',
+  },
+};
 const pad = (value) => String(value).padStart(2, '0');
 const slideKey = 'asl-presentation-slide';
 const decisionKey = 'asl-presentation-decision';
@@ -133,12 +159,31 @@ function setDecision(value) {
   else storageRemove(decisionKey);
 }
 
+function setConcept(value) {
+  const concept = concepts[value];
+  if (!concept || !conceptKind || !conceptTitle || !conceptText) return;
+  conceptKind.textContent = concept.kind;
+  conceptTitle.textContent = concept.title;
+  conceptText.textContent = concept.text;
+  conceptButtons.forEach((button) => {
+    const selected = button.dataset.concept === value;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+}
+
 prevButton.addEventListener('click', () => showSlide(current - 1));
 nextButton.addEventListener('click', () => showSlide(current + 1));
 outlineToggle.addEventListener('click', () => setOutline(!outline.classList.contains('open')));
 outlineClose.addEventListener('click', () => setOutline(false));
 backdrop.addEventListener('click', () => setOutline(false));
 decisionButtons.forEach((button) => button.addEventListener('click', () => setDecision(button.dataset.decision)));
+conceptButtons.forEach((button) => {
+  const selectConcept = () => setConcept(button.dataset.concept);
+  button.addEventListener('mouseenter', selectConcept);
+  button.addEventListener('focus', selectConcept);
+  button.addEventListener('click', selectConcept);
+});
 
 document.addEventListener('keydown', (event) => {
   const target = event.target instanceof Element ? event.target : null;
@@ -176,4 +221,5 @@ window.addEventListener('hashchange', () => {
 
 buildOutline();
 setDecision(storageGet(decisionKey));
+setConcept('skill');
 showSlide(initialSlide());
