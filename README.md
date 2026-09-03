@@ -8,17 +8,16 @@ Interaktive, kundentaugliche Gesprächspräsentation für einen gemeinsamen Vor-
 2. manuelle Arbeit, Übergaben und Kontextwechsel
 3. direkter IST-/SOLL-Vergleich des Vorgangs
 4. vier aufeinander aufbauende AI-Integrationsstufen
-5. sofort umsetzbare Outlook-/Copilot-Routinen
-6. technische Copilot-Diagnose
-7. interaktive Zielarchitektur für einen möglichen ASL-Agenten
-8. konkreter Pilotfall „Schadensmeldung per E-Mail“ mit Prompt, Systemübergaben und messbarer Zeitannahme
-9. mögliche Unterstützung durch SimpleA
-10. gemeinsame Priorisierung
-11. Quellen und Datenrahmen
+5. interaktive Zielarchitektur für einen möglichen ASL-Agenten
+6. konkreter Pilotfall „Schadensmeldung per E-Mail“ mit Prompt, Systemübergaben und messbarer Zeitannahme
+7. mögliche Unterstützung durch SimpleA
+8. gemeinsame Priorisierung
+9. Quellen und Datenrahmen
 
 ## Bedienung
 
 - `←` / `→`, `Page Up` / `Page Down` oder Leertaste: Folien wechseln
+- `1` bis `9`: direkt zur entsprechenden Folie, `0`: direkt zu Folie 10
 - `Home` / `End`: erste bzw. letzte Folie
 - `O`: Folienübersicht
 - Auswahl auf der Entscheidungsfolie bleibt lokal im Browser gespeichert
@@ -35,7 +34,7 @@ Danach `http://localhost:8090` öffnen.
 
 ## Struktur
 
-- `index.html` – zwölf Präsentationsfolien
+- `index.html` – zehn Präsentationsfolien
 - `styles.css` – 16:9-Deck, responsive Mobilansicht und Printlayout
 - `script.js` – Navigation, Übersicht und lokale Gesprächsauswahl
 - `tests/verify_site.py` – statische Struktur-, Link- und Mandantengrenzenprüfung

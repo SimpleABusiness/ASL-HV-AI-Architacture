@@ -33,22 +33,20 @@ Die ausführliche interne Vorbereitung liegt in Freddys Obsidian unter:
 
 ## Kundenpräsentation
 
-`index.html` ist eine interaktive Präsentation mit zwölf Folien:
+`index.html` ist eine interaktive Präsentation mit zehn Folien:
 
 1. Gesprächseinstieg,
 2. vorhandene Systemlandschaft,
 3. sichtbare manuelle Arbeit und Kontextwechsel am heutigen Beispielprozess,
 4. optimierter SOLL-Prozess im direkten Vergleich zum IST,
 5. Reifeweg von heutiger Einzelnutzung über Skills und verbundene Workflows bis zu begrenzter Agentic AI,
-6. drei sofort testbare Outlook-/Copilot-Routinen,
-7. Copilot-Diagnose,
-8. interaktive Zielarchitektur eines möglichen ASL-Agenten mit Laufzeit, Tools, Wissen, Memory, Workflow und Freigabegrenze,
-9. konkreter Pilotfall „Schadensmeldung per E-Mail“ inklusive Prompt, Systemübergaben und Zeitmessung,
-10. mögliche SimpleA-Unterstützung,
-11. gemeinsame Priorisierung,
-12. Quellen und Datenrahmen.
+6. interaktive Zielarchitektur eines möglichen ASL-Agenten mit Laufzeit, Tools, Wissen, Memory, Workflow und Freigabegrenze,
+7. konkreter Pilotfall „Schadensmeldung per E-Mail“ inklusive Prompt, Systemübergaben und Zeitmessung,
+8. mögliche SimpleA-Unterstützung,
+9. gemeinsame Priorisierung,
+10. Quellen und Datenrahmen.
 
-Die Folien lassen sich per Tastatur steuern. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
+Die Folien lassen sich per Tastatur steuern; die Ziffern `1` bis `9` öffnen direkt die jeweilige Folie, `0` öffnet Folie 10. Eine im Gespräch gewählte Priorität wird ausschließlich lokal im Browser gespeichert. Die Präsentation vermeidet Preise und bindende Leistungsversprechen; ein konkretes Angebot folgt erst nach der Ist-Aufnahme.
 
 ### Neue Dramaturgie nach dem IST-Prozess
 

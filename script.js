@@ -198,8 +198,17 @@ document.addEventListener('keydown', (event) => {
     return;
   }
 
-  if (target?.matches('input, textarea, select')) return;
+  if (target?.matches('input, textarea, select') || target?.isContentEditable) return;
   if (target?.matches('button, a') && event.key === ' ') return;
+
+  if (!event.ctrlKey && !event.metaKey && !event.altKey && /^[0-9]$/.test(event.key)) {
+    const slideNumber = event.key === '0' ? 10 : Number.parseInt(event.key, 10);
+    if (slideNumber <= slides.length) {
+      event.preventDefault();
+      showSlide(slideNumber - 1, { focus: true });
+    }
+    return;
+  }
 
   if (['ArrowRight', 'PageDown', ' '].includes(event.key)) {
     event.preventDefault();
